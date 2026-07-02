@@ -1,0 +1,1736 @@
+[
+  {
+    "id": "og_godlo",
+    "category": "ogolne",
+    "q_ru": "Как выглядит польский герб?",
+    "q_pl": "Jak wygląda godło Polski?",
+    "a_pl": "Godło Polski to biały orzeł w złotej koronie na czerwonym tle. Orzeł ma złoty dziób i złote szpony.",
+    "a_ru": "Герб Польши — это белый орёл в золотой короне на красном фоне. У орла золотой клюв и золотые когти.",
+    "translit": "Гóдло Пóльски то бя́лы ожéл в злóтэй корóне на чэрвóным тле. Ожéл ма злóты дзюп и злóтэ шпóны.",
+    "why": "Герб (godło) — один из главных государственных символов, вопрос про орла встречается на экзамене почти всегда.",
+    "difficulty": 1,
+    "tags": [
+      "символы"
+    ],
+    "source": "pl.wikipedia.org + gov.pl",
+    "personal": false
+  },
+  {
+    "id": "og_flaga",
+    "category": "ogolne",
+    "q_ru": "Какие цвета у польского флага?",
+    "q_pl": "Jakie kolory ma flaga Polski?",
+    "a_pl": "Flaga Polski ma dwa kolory: biały na górze i czerwony na dole.",
+    "a_ru": "У флага Польши два цвета: белый сверху и красный снизу.",
+    "translit": "Флáга Пóльски ма два кóлоры: бя́лы на гýже и чэрвóны на дóле.",
+    "why": "Цвета флага и их порядок (белый сверху) — базовый вопрос о символах государства.",
+    "difficulty": 1,
+    "tags": [
+      "символы"
+    ],
+    "source": "pl.wikipedia.org + gov.pl",
+    "personal": false
+  },
+  {
+    "id": "og_chrzest",
+    "category": "ogolne",
+    "q_ru": "Когда было крещение Польши и кто был тогда правителем?",
+    "q_pl": "Kiedy był chrzest Polski i kto wtedy panował?",
+    "a_pl": "Chrzest Polski był w 966 roku. Wtedy panował książę Mieszko I.",
+    "a_ru": "Крещение Польши было в 966 году. Тогда правил князь Мешко I.",
+    "translit": "Хжэст Пóльски был в дзевен́цьсэт шэ́щдзещёнтым шýстым рóку. Втэ́ды панóвал кщё́нже Мéшко Пéрвши.",
+    "why": "966 год и Мешко I — ключевая дата начала польской государственности и христианства, спрашивают часто.",
+    "difficulty": 2,
+    "tags": [
+      "история",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_hymn_nazwa",
+    "category": "ogolne",
+    "q_ru": "Как называется польский гимн и кто написал его слова?",
+    "q_pl": "Jak nazywa się hymn Polski i kto napisał słowa?",
+    "a_pl": "Hymn Polski nazywa się Mazurek Dąbrowskiego. Słowa napisał Józef Wybicki.",
+    "a_ru": "Польский гимн называется «Мазурка Домбровского». Слова написал Юзеф Выбицкий.",
+    "translit": "Хымн Пóльски называ́ се Мазýрэк Домбрóвскего. Слóва напи́сал Ю́зэф Выби́цки.",
+    "why": "Название гимна и автор слов — обязательный вопрос про символы. Гимн с 1927 года.",
+    "difficulty": 2,
+    "tags": [
+      "символы",
+      "гимн"
+    ],
+    "source": "pl.wikipedia.org + gov.pl",
+    "personal": false
+  },
+  {
+    "id": "og_hymn_pierwsza_linia",
+    "category": "ogolne",
+    "q_ru": "Какая первая строка польского гимна?",
+    "q_pl": "Jakie są pierwsze słowa hymnu Polski?",
+    "a_pl": "Pierwsze słowa hymnu to: Jeszcze Polska nie zginęła, kiedy my żyjemy.",
+    "a_ru": "Первая строка гимна: «Ещё Польша не погибла, пока мы живём».",
+    "translit": "Пéрвшэ слóва хы́мну то: Éщче Пóльска не згинэ́ўа, кéды мы жыéмы.",
+    "why": "Первую строку гимна нередко просят процитировать наизусть — это знак знания символов.",
+    "difficulty": 2,
+    "tags": [
+      "символы",
+      "гимн"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "og_swieta_panstwowe",
+    "category": "ogolne",
+    "q_ru": "Какие главные государственные праздники в Польше?",
+    "q_pl": "Jakie są najważniejsze święta państwowe w Polsce?",
+    "a_pl": "Najważniejsze święta państwowe to: 3 maja, czyli Święto Konstytucji, oraz 11 listopada, czyli Święto Niepodległości. Świętem jest też 1 maja, Święto Pracy.",
+    "a_ru": "Главные государственные праздники: 3 мая — День Конституции, и 11 ноября — День Независимости. Праздником является и 1 мая — День Труда.",
+    "translit": "Найважнéйшэ щвéнта паньствóвэ то: тшéцего мáя, чы́ли Щвéнто Конститýцьи, óраз едэнáстэго листопáда, чы́ли Щвéнто Неподлэглóщчи. Щвéнтэм ест тэж пéрвшэго мáя, Щвéнто Прáцы.",
+    "why": "3 мая и 11 ноября — главные национальные праздники, их даты и значение спрашивают почти всегда.",
+    "difficulty": 2,
+    "tags": [
+      "праздники",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org + gov.pl",
+    "personal": false
+  },
+  {
+    "id": "og_swieta_katolickie",
+    "category": "ogolne",
+    "q_ru": "Какие главные католические праздники отмечают в Польше?",
+    "q_pl": "Jakie są najważniejsze święta katolickie w Polsce?",
+    "a_pl": "Najważniejsze święta katolickie to Boże Narodzenie i Wielkanoc. Ważne jest też Boże Ciało.",
+    "a_ru": "Главные католические праздники — Рождество и Пасха. Важен также праздник Тела Господня (Бóже Цяло).",
+    "translit": "Найважнéйшэ щвéнта католи́цке то Бóжэ Народзéне и Велькáноц. Вáжнэ ест тэж Бóжэ Ця́ло.",
+    "why": "Польша — преимущественно католическая страна; знание главных религиозных праздников ожидается на экзамене.",
+    "difficulty": 2,
+    "tags": [
+      "праздники",
+      "религия"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_dania_tradycyjne",
+    "category": "ogolne",
+    "q_ru": "Какие традиционные польские блюда вы знаете?",
+    "q_pl": "Jakie znasz tradycyjne polskie dania?",
+    "a_pl": "Tradycyjne polskie dania to bigos, pierogi, żurek i kotlet schabowy.",
+    "a_ru": "Традиционные польские блюда — бигос, пероги (вареники), журек и котлет схабовый (свиная отбивная).",
+    "translit": "Традыцы́йнэ пóльске дáня то би́гос, перóги, жýрэк и кóтлет схабóвы.",
+    "why": "Вопрос про национальную кухню частый; bigos и pierogi — самые узнаваемые блюда.",
+    "difficulty": 1,
+    "tags": [
+      "кухня",
+      "традиции"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_desery",
+    "category": "ogolne",
+    "q_ru": "Какие традиционные польские десерты и пироги вы знаете?",
+    "q_pl": "Jakie znasz tradycyjne polskie desery i ciasta?",
+    "a_pl": "Tradycyjne polskie słodycze to pączki, sernik i makowiec.",
+    "a_ru": "Традиционные польские сладости — пончики (пончки), сырник (творожный пирог) и маковый рулет (маковец).",
+    "translit": "Традыцы́йнэ пóльске слóдыче то пóнчки, сéрник и маковéц.",
+    "why": "Sernik и makowiec — классика польской выпечки, особенно к праздникам; узнаваемый вопрос о кухне.",
+    "difficulty": 2,
+    "tags": [
+      "кухня",
+      "традиции"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_noblisci",
+    "category": "ogolne",
+    "q_ru": "Каких польских нобелевских лауреатов вы знаете?",
+    "q_pl": "Jakich polskich laureatów Nagrody Nobla znasz?",
+    "a_pl": "Polscy laureaci Nagrody Nobla to między innymi Maria Skłodowska-Curie, Henryk Sienkiewicz, Czesław Miłosz, Wisława Szymborska, Lech Wałęsa i Olga Tokarczuk.",
+    "a_ru": "Польские нобелевские лауреаты — это, среди прочих, Мария Склодовская-Кюри, Генрик Сенкевич, Чеслав Милош, Вислава Шимборская, Лех Валенса и Ольга Токарчук.",
+    "translit": "Пóльсцы лаурéаци Нагрóды Нóбла то мéндзы и́ннымi Мáря Склодóвска-Кюри́, Хéнрык Шенкéвич, Чéслав Ми́лош, Висáва Шымбóрска, Лэх Ваўэ́нса и Óльга Токáрчук.",
+    "why": "Польша гордится своими нобелевскими лауреатами; Склодовская-Кюри (дважды) — самый известный пример.",
+    "difficulty": 3,
+    "tags": [
+      "известные люди",
+      "наука",
+      "литература"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "og_zubr",
+    "category": "ogolne",
+    "q_ru": "Какое животное является символом Беловежской пущи?",
+    "q_pl": "Jakie zwierzę jest symbolem Puszczy Białowieskiej?",
+    "a_pl": "Symbolem Puszczy Białowieskiej jest żubr. To największe dzikie zwierzę w Polsce.",
+    "a_ru": "Символ Беловежской пущи — зубр. Это самое крупное дикое животное в Польше.",
+    "translit": "Симбóлем Пýшчы Бялове́ской ест жубр. То найвéнкшэ дзи́ке звéжэ в Пóльсце.",
+    "why": "Зубр и Беловежская пуща — известный природный символ Польши (объект ЮНЕСКО).",
+    "difficulty": 2,
+    "tags": [
+      "природа",
+      "символы"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_kompozytorzy",
+    "category": "ogolne",
+    "q_ru": "Каких известных польских композиторов вы знаете?",
+    "q_pl": "Jakich znasz znanych polskich kompozytorów?",
+    "a_pl": "Najbardziej znany polski kompozytor to Fryderyk Chopin. Znani są też Stanisław Moniuszko i Krzysztof Penderecki.",
+    "a_ru": "Самый известный польский композитор — Фридерик Шопен. Известны также Станислав Монюшко и Кшиштоф Пендерецкий.",
+    "translit": "Найбáрдзей знáны пóльски композы́тор то Фрыдэ́рык Шóпэн. Знáни сон тэж Станислáв Моню́шко и Кшы́штоф Пэндэрэ́цки.",
+    "why": "Шопен — национальная гордость и культурный символ; вопрос о композиторах распространён.",
+    "difficulty": 2,
+    "tags": [
+      "известные люди",
+      "музыка"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_rezyserzy",
+    "category": "ogolne",
+    "q_ru": "Каких известных польских режиссёров вы знаете?",
+    "q_pl": "Jakich znasz znanych polskich reżyserów?",
+    "a_pl": "Znani polscy reżyserzy to Andrzej Wajda, Krzysztof Kieślowski i Roman Polański.",
+    "a_ru": "Известные польские режиссёры — Анджей Вайда, Кшиштоф Кесьлёвский и Роман Полански.",
+    "translit": "Знáни пóльсцы рэжысéжы то А́нджей Вáйда, Кшы́штоф Кещлёвски и Рóман Полáньски.",
+    "why": "Польское кино известно в мире; Вайда — лауреат почётного «Оскара», частый вопрос о культуре.",
+    "difficulty": 2,
+    "tags": [
+      "известные люди",
+      "кино"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_smok_wawelski",
+    "category": "ogolne",
+    "q_ru": "Где живёт Вавельский дракон?",
+    "q_pl": "Gdzie mieszka smok wawelski?",
+    "a_pl": "Smok wawelski mieszka w Krakowie, pod Wawelem, w jaskini nad Wisłą.",
+    "a_ru": "Вавельский дракон живёт в Кракове, под Вавелем, в пещере у реки Висла.",
+    "translit": "Смок вавéльски мéшка в Крáкове, под Вáвэлем, в яски́ни над Ви́слон.",
+    "why": "Легенда о Вавельском драконе — известный краковский символ и часть народной культуры.",
+    "difficulty": 1,
+    "tags": [
+      "легенды",
+      "культура"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_tlusty_czwartek",
+    "category": "ogolne",
+    "q_ru": "Что едят в Жирный четверг (Tłusty Czwartek)?",
+    "q_pl": "Co je się w tłusty czwartek?",
+    "a_pl": "W tłusty czwartek je się pączki i faworki, czyli chrust.",
+    "a_ru": "В Жирный четверг едят пончики (пончки) и хворост (фаворки).",
+    "translit": "В тлýсты чвáртэк е се пóнчки и фавóрки, чы́ли хруст.",
+    "why": "Tłusty czwartek — популярная традиция перед Великим постом, поляки едят пончики; типичный вопрос.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "кухня"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_danie_polskie",
+    "category": "ogolne",
+    "q_ru": "Какое блюдо является традиционно польским?",
+    "q_pl": "Które danie jest tradycyjnie polskie?",
+    "a_pl": "Tradycyjnie polskie danie to bigos. Hot dog czy soljanka to nie są polskie dania.",
+    "a_ru": "Традиционно польское блюдо — бигос. Хот-дог или солянка не являются польскими блюдами.",
+    "translit": "Традыцы́йне пóльске дáне то би́гос. Хот-дог чы солья́нка то не сон пóльске дáня.",
+    "why": "Это вопрос-ловушка: важно выбрать именно польское блюдо (bigos), а не иностранное.",
+    "difficulty": 1,
+    "tags": [
+      "кухня",
+      "традиции"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_wszystkich_swietych",
+    "category": "ogolne",
+    "q_ru": "Какой праздник отмечают 1 ноября?",
+    "q_pl": "Jakie święto obchodzi się 1 listopada?",
+    "a_pl": "1 listopada obchodzi się Wszystkich Świętych. Ludzie odwiedzają groby i zapalają znicze.",
+    "a_ru": "1 ноября отмечают День всех святых. Люди посещают могилы и зажигают лампадки (свечи).",
+    "translit": "Пéрвшэго листопáда обхóдзи се Вшы́стких Щвéнтых. Лю́дзе одвéдзаён грóбы и запáляён зни́че.",
+    "why": "1 ноября — важный день памяти; традиция посещать кладбища и зажигать лампады очень характерна.",
+    "difficulty": 2,
+    "tags": [
+      "праздники",
+      "традиции"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_pisarze",
+    "category": "ogolne",
+    "q_ru": "Каких известных польских писателей и поэтов вы знаете?",
+    "q_pl": "Jakich znasz znanych polskich pisarzy i poetów?",
+    "a_pl": "Znani polscy pisarze i poeci to Adam Mickiewicz, Henryk Sienkiewicz i Juliusz Słowacki.",
+    "a_ru": "Известные польские писатели и поэты — Адам Мицкевич, Генрик Сенкевич и Юлиуш Словацкий.",
+    "translit": "Знáни пóльсцы писáжы и поэ́ци то А́дам Мицкéвич, Хéнрык Шенкéвич и Ю́лиуш Слова́цки.",
+    "why": "Мицкевич — главный национальный поэт; вопрос о литературе встречается часто.",
+    "difficulty": 2,
+    "tags": [
+      "известные люди",
+      "литература"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_tradycje",
+    "category": "ogolne",
+    "q_ru": "Какие характерные польские традиции вы знаете?",
+    "q_pl": "Jakie znasz charakterystyczne polskie tradycje?",
+    "a_pl": "Polskie tradycje to na przykład święconka, czyli święcenie pokarmów na Wielkanoc, oraz śmigus-dyngus, czyli oblewanie się wodą w lany poniedziałek.",
+    "a_ru": "Польские традиции — например, свенцонка (освящение еды на Пасху) и смигус-дынгус (обливание водой в «мокрый понедельник»).",
+    "translit": "Пóльске трады́цье то на пшы́клад щвенцóнка, чы́ли щвенцéне покáрмув на Велькáноц, óраз щми́гус-ды́нгус, чы́ли облéване се водóн в ля́ны понедзя́лэк.",
+    "why": "Пасхальные традиции (święconka, śmigus-dyngus) очень характерны для польской культуры.",
+    "difficulty": 3,
+    "tags": [
+      "традиции",
+      "праздники"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_papiez",
+    "category": "ogolne",
+    "q_ru": "Какой известный поляк был Папой Римским?",
+    "q_pl": "Który znany Polak był papieżem?",
+    "a_pl": "Papieżem był Jan Paweł II. Nazywał się Karol Wojtyła i był pierwszym papieżem Polakiem.",
+    "a_ru": "Папой Римским был Иоанн Павел II. Его звали Кароль Войтыла, и он был первым Папой-поляком.",
+    "translit": "Папéжэм был Ян Пáвэл Дрýги. Назы́вал се Кáроль Войты́ла и был пéрвшым папéжэм Поля́кем.",
+    "why": "Иоанн Павел II — один из самых почитаемых поляков; вопрос о нём очень частый.",
+    "difficulty": 1,
+    "tags": [
+      "известные люди",
+      "религия"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "og_kopernik",
+    "category": "ogolne",
+    "q_ru": "Кто создал гелиоцентрическую теорию?",
+    "q_pl": "Kto stworzył teorię heliocentryczną?",
+    "a_pl": "Teorię heliocentryczną stworzył Mikołaj Kopernik. Był polskim astronomem.",
+    "a_ru": "Гелиоцентрическую теорию создал Николай Коперник. Он был польским астрономом.",
+    "translit": "Теóрье хэлиоцэнтры́чнон ствóжыл Микóлай Копéрник. Был пóльским астронóмэм.",
+    "why": "Коперник — символ польской науки; «он остановил Солнце и сдвинул Землю» — известная фраза.",
+    "difficulty": 2,
+    "tags": [
+      "известные люди",
+      "наука"
+    ],
+    "source": "pl.wikipedia.org + culture.pl",
+    "personal": false
+  },
+  {
+    "id": "his_pierwszy_krol",
+    "category": "historia",
+    "q_ru": "Кто был первым королём Польши?",
+    "q_pl": "Kto był pierwszym królem Polski?",
+    "a_pl": "Pierwszym królem Polski był Bolesław Chrobry. Został koronowany w 1025 roku.",
+    "a_ru": "Первым королём Польши был Болеслав Храбрый. Он был коронован в 1025 году.",
+    "translit": "Пе́рвшим кру́лем Пóльски быў Болéслав Хрóбры. Зостáў коронóваны в ты́сёнц два́дзешча пёнтым рóку.",
+    "why": "Болеслав I Храбрый — первый коронованный король Польши (коронация 1025). Его отец Мешко I был первым историческим правителем, но носил титул князя, а не короля.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "короли"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_mieszko_i",
+    "category": "historia",
+    "q_ru": "Кто был первым историческим правителем Польши?",
+    "q_pl": "Kto był pierwszym historycznym władcą Polski?",
+    "a_pl": "Pierwszym historycznym władcą Polski był Mieszko I. Był księciem, a w 966 roku przyjął chrzest.",
+    "a_ru": "Первым историческим правителем Польши был Мешко I. Он был князем, а в 966 году принял крещение.",
+    "translit": "Пе́рвшим хисторы́чным влáдцон Пóльски быў Мéшко Пéрвши. Быў кщóнжэнцем, а в дзевéнцьсэт шесьдзешóнт шóстым рóку пшиёнў хшчест.",
+    "why": "Мешко I — первый исторический правитель Польши, но он был князем, а не королём. Крещение Польши в 966 году считается началом польской государственности.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "короли"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_testament_krzywoustego",
+    "category": "historia",
+    "q_ru": "Что такое статут (завещание) Болеслава Кривоустого 1138 года?",
+    "q_pl": "Czym był statut (testament) Bolesława Krzywoustego z 1138 roku?",
+    "a_pl": "To dokument z 1138 roku, który podzielił Polskę między synów Bolesława Krzywoustego. Zaczęło się wtedy rozbicie dzielnicowe.",
+    "a_ru": "Это документ 1138 года, который разделил Польшу между сыновьями Болеслава Кривоустого. Тогда началась феодальная раздробленность.",
+    "translit": "То докýмент з ты́сёнц сто тшидзéсте óсмэго рóку, ктýры подзéлиў Пóльскен мéндзы сы́нув Болéслава Кшивоýстэго. Заче́нло щен вте́ды розб́́ице дзельницóвэ.",
+    "why": "Статут Болеслава Кривоустого (1138) разделил страну между его сыновьями и положил начало периоду феодальной раздробленности (rozbicie dzielnicowe).",
+    "difficulty": 3,
+    "tags": [
+      "даты",
+      "раздробленность"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_popiel",
+    "category": "historia",
+    "q_ru": "О чём легенда о короле Попеле?",
+    "q_pl": "O czym jest legenda o królu Popielu?",
+    "a_pl": "Według legendy zły król Popiel został zjedzony przez myszy. Po nim władzę objęła dynastia Piastów.",
+    "a_ru": "По легенде злого короля Попеля съели мыши. После него власть перешла к династии Пястов.",
+    "translit": "Ведýг легéнды злы крýль Пóпель зостáў зъéдзоны пшез мы́ши. По ним влáдзэн объéнла дынáстья Пя́стув.",
+    "why": "Легенда о Попеле — польская легенда о жестоком князе, которого, по преданию, в башне в Крушвице съели мыши. После него к власти пришли Пясты.",
+    "difficulty": 2,
+    "tags": [
+      "легенды"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_piast_kolodziej",
+    "category": "historia",
+    "q_ru": "Кто такой Пяст Колодей (Piast Kołodziej)?",
+    "q_pl": "Kim był Piast Kołodziej?",
+    "a_pl": "Piast Kołodziej to legendarny przodek dynastii Piastów. Według legendy był prostym rolnikiem i kołodziejem.",
+    "a_ru": "Пяст Колодей — легендарный родоначальник династии Пястов. По легенде он был простым земледельцем и колесником.",
+    "translit": "Пяст Колóдзей то легендáрны пшóдек дынáстьи Пя́стув. Ведýг легéнды быў прóстым рольн́икем и колóдзеем.",
+    "why": "Пяст Колодей (колесник) — легендарный основатель первой польской династии Пястов, к которой принадлежали Мешко I и Болеслав Храбрый.",
+    "difficulty": 2,
+    "tags": [
+      "легенды",
+      "короли"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_jan_matejko",
+    "category": "historia",
+    "q_ru": "Кто такой Ян Матейко?",
+    "q_pl": "Kim był Jan Matejko?",
+    "a_pl": "Jan Matejko był polskim malarzem. Malował wielkie obrazy historyczne, na przykład „Bitwę pod Grunwaldem”.",
+    "a_ru": "Ян Матейко был польским художником. Он писал большие исторические полотна, например «Битву под Грюнвальдом».",
+    "translit": "Ян Матéйко быў пóльским малáжэм. Малóваў вéлькье обрáзы хисторы́чнэ, на пшикłáд „Б́итвэн под Грунвáльдэм”.",
+    "why": "Ян Матейко (1838–1893) — крупнейший польский исторический живописец. Его картины «Битва под Грюнвальдом», «Прусская дань» и другие формируют визуальный образ польской истории.",
+    "difficulty": 2,
+    "tags": [
+      "культура",
+      "люди"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "his_kopernik",
+    "category": "historia",
+    "q_ru": "Кто такой Николай Коперник?",
+    "q_pl": "Kim był Mikołaj Kopernik?",
+    "a_pl": "Mikołaj Kopernik był polskim astronomem. Powiedział, że to Ziemia krąży wokół Słońca.",
+    "a_ru": "Николай Коперник был польским астрономом. Он утверждал, что Земля вращается вокруг Солнца.",
+    "translit": "Мико́лай Копéрник быў пóльским астронóмэм. Поведзáў, жэ то Зéмя крóнжи вокýў Сłóньца.",
+    "why": "Николай Коперник (1473–1543) — польский астроном, автор гелиоцентрической теории (Земля и планеты вращаются вокруг Солнца), изложенной в труде «De revolutionibus orbium coelestium».",
+    "difficulty": 2,
+    "tags": [
+      "культура",
+      "люди"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "his_drewniana_murowana",
+    "category": "historia",
+    "q_ru": "О ком говорят: «Застал Польшу деревянной, а оставил каменной»?",
+    "q_pl": "O kim mówi się: „Zastał Polskę drewnianą, a zostawił murowaną”?",
+    "a_pl": "Tak mówi się o Kazimierzu Wielkim. Zbudował dużo murowanych zamków i miast.",
+    "a_ru": "Так говорят о Казимире Великом. Он построил много каменных замков и городов.",
+    "translit": "Так мýви щен о Казьмéжу Вéлькем. Збудóваў дýжо мурóваных зáмкув и мяст.",
+    "why": "Поговорка «Zastał Polskę drewnianą, a zostawił murowaną» относится к Казимиру III Великому, при котором в Польше развернулось масштабное каменное строительство.",
+    "difficulty": 2,
+    "tags": [
+      "короли",
+      "поговорки"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_kazimierz_wielki",
+    "category": "historia",
+    "q_ru": "Чем известен король Казимир III Великий?",
+    "q_pl": "Z czego znany jest król Kazimierz III Wielki?",
+    "a_pl": "Kazimierz Wielki był wielkim reformatorem. Wydał ważne ustawy i zbudował wiele zamków i miast.",
+    "a_ru": "Казимир Великий был великим реформатором. Он издал важные законы (Уставы) и построил много замков и городов.",
+    "translit": "Казьмéж Вéльки быў вéльким рэформáторэм. Вы́даў вáжнэ устáвы и збудóваў вéле зáмкув и мяст.",
+    "why": "Казимир III Великий (правил 1333–1370) — последний король из династии Пястов, провёл правовые реформы (Вислицкие и Петрковские уставы), укрепил государство и основал университет в Кракове.",
+    "difficulty": 2,
+    "tags": [
+      "короли",
+      "реформы"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_bitwa_plowce",
+    "category": "historia",
+    "q_ru": "Кто победил в битве под Пловцами (1331)?",
+    "q_pl": "Kto wygrał bitwę pod Płowcami w 1331 roku?",
+    "a_pl": "Bitwę pod Płowcami wygrali Polacy. Dowodził nimi król Władysław Łokietek, a walczyli z Krzyżakami.",
+    "a_ru": "Битву под Пловцами выиграли поляки. Ими командовал король Владислав Локоток, а сражались они с крестоносцами.",
+    "translit": "Б́итвэн под Пłóвцами вы́грали Полáцы. Довóдзиў ним́и крýль Влади́сłав Łокéтек, а вáльчили з Кшижáками.",
+    "why": "В битве под Пловцами (27 сентября 1331) польские войска под командованием Владислава I Локотка одержали победу над Тевтонским орденом (крестоносцами).",
+    "difficulty": 3,
+    "tags": [
+      "даты",
+      "битвы",
+      "крестоносцы"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_bitwa_grunwald",
+    "category": "historia",
+    "q_ru": "Что произошло в битве под Грюнвальдом в 1410 году?",
+    "q_pl": "Co się stało w bitwie pod Grunwaldem w 1410 roku?",
+    "a_pl": "W 1410 roku wojska polsko-litewskie pokonały Zakon Krzyżacki. Dowodził nimi król Władysław Jagiełło.",
+    "a_ru": "В 1410 году польско-литовские войска разбили Тевтонский орден. Ими командовал король Владислав Ягайло.",
+    "translit": "В ты́сёнц чтэры́ста дзешóнтым рóку войскá польско-литéвске поконáли Зáкон Кшижáцки. Довóдзиў ним́и крýль Влади́сłав Ягéłło.",
+    "why": "Битва под Грюнвальдом (15 июля 1410) — одно из крупнейших сражений средневековой Европы; объединённые польско-литовские войска под командованием Владислава II Ягайло разгромили Тевтонский орден.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "битвы",
+      "крестоносцы"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_warnenczyk",
+    "category": "historia",
+    "q_ru": "Как погиб король Владислав III Варненьчик?",
+    "q_pl": "Jak zginął król Władysław III Warneńczyk?",
+    "a_pl": "Władysław III Warneńczyk zginął w 1444 roku w bitwie pod Warną. Walczył z Turkami.",
+    "a_ru": "Владислав III Варненьчик погиб в 1444 году в битве под Варной. Он сражался с турками.",
+    "translit": "Влади́сłав Тшéчи Варнéньчик зѓинон в ты́сёнц чтэры́ста чтэрдзéсте чвáртым рóку в б́итве под Вáрнон. Вáльчиў з Тýркáми.",
+    "why": "Владислав III, король Польши и Венгрии, погиб 10 ноября 1444 года в битве под Варной с Османской империей; отсюда прозвище «Варненьчик».",
+    "difficulty": 3,
+    "tags": [
+      "даты",
+      "короли",
+      "битвы"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_pierwszy_jagiellon",
+    "category": "historia",
+    "q_ru": "Кто был первым королём из династии Ягеллонов?",
+    "q_pl": "Kto był pierwszym królem z dynastii Jagiellonów?",
+    "a_pl": "Pierwszym królem z dynastii Jagiellonów był Władysław II Jagiełło. Był wcześniej księciem litewskim.",
+    "a_ru": "Первым королём из династии Ягеллонов был Владислав II Ягайло. Раньше он был литовским князем.",
+    "translit": "Пе́рвшим крýлем з дынáстьи Ягеллóнув быў Влади́сłав Дрýги Ягéłło. Быў вчещ́нэй кщóнжэнцем литéвским.",
+    "why": "Владислав II Ягайло, великий князь литовский, стал королём Польши после женитьбы на Ядвиге (1386) и основал династию Ягеллонов.",
+    "difficulty": 2,
+    "tags": [
+      "короли",
+      "династии"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_ostatni_jagiellon",
+    "category": "historia",
+    "q_ru": "Кто был последним королём из династии Ягеллонов?",
+    "q_pl": "Kto był ostatnim królem z dynastii Jagiellonów?",
+    "a_pl": "Ostatnim królem z dynastii Jagiellonów był Zygmunt II August. Zmarł w 1572 roku.",
+    "a_ru": "Последним королём из династии Ягеллонов был Зыгмунт II Август. Он умер в 1572 году.",
+    "translit": "Остáтним крýлем з дынáстьи Ягеллóнув быў Зы́гмунт Дрýги Áугуст. Змáрł в ты́сёнц пеньчьсэт щéдемдзешóнт дрýгим рóку.",
+    "why": "Сигизмунд II Август — последний король из династии Ягеллонов по мужской линии, умер бездетным в 1572 году. После него началась эпоха выборных монархов.",
+    "difficulty": 3,
+    "tags": [
+      "короли",
+      "династии",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_uniwersytet_jagiellonski",
+    "category": "historia",
+    "q_ru": "Кто и когда основал Ягеллонский университет?",
+    "q_pl": "Kto i kiedy założył Uniwersytet Jagielloński?",
+    "a_pl": "Uniwersytet w Krakowie założył król Kazimierz Wielki w 1364 roku. To najstarsza uczelnia w Polsce.",
+    "a_ru": "Университет в Кракове основал король Казимир Великий в 1364 году. Это старейший вуз в Польше.",
+    "translit": "Унивэрсытéт в Крáкове залóжиў крýль Казьмéж Вéльки в ты́сёнц тшы́ста шесьдзешóнт чвáртым рóку. То найстáрша учéльня в Пóльсце.",
+    "why": "Краковская академия (позже Ягеллонский университет) основана Казимиром III Великим в 1364 году — старейший университет Польши. Имя «Ягеллонский» он получил позже, при поддержке Ягеллонов.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "культура"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_szczerbiec",
+    "category": "historia",
+    "q_ru": "Что такое Щербец (Szczerbiec)?",
+    "q_pl": "Czym jest Szczerbiec?",
+    "a_pl": "Szczerbiec to miecz koronacyjny królów polskich. Dziś znajduje się na Wawelu w Krakowie.",
+    "a_ru": "Щербец — это коронационный меч польских королей. Сегодня он хранится на Вавеле в Кракове.",
+    "translit": "Щéрбец то меч коронацы́йны крýлюв пóльских. Дзищ знáйдуе щен на Вáвелю в Крáкове.",
+    "why": "Щербец — единственный сохранившийся коронационный меч польских королей, использовался начиная с коронации Владислава Локотка (1320). Хранится в королевском замке на Вавеле.",
+    "difficulty": 3,
+    "tags": [
+      "символы",
+      "короли"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_konrad_mazowiecki",
+    "category": "historia",
+    "q_ru": "Кто привёл крестоносцев (Тевтонский орден) в Польшу?",
+    "q_pl": "Kto sprowadził Krzyżaków do Polski?",
+    "a_pl": "Krzyżaków sprowadził książę Konrad Mazowiecki w 1226 roku. Chciał, żeby pomogli mu walczyć z Prusami.",
+    "a_ru": "Крестоносцев привёл князь Конрад Мазовецкий в 1226 году. Он хотел, чтобы они помогли ему воевать с пруссами.",
+    "translit": "Кшижáкув спровáдзиў кщóнжэ Кóнрад Мазовéцки в ты́сёнц двещ́че двадзéсте шóстым рóку. Хчáу, жэбы помóгли му вáльчиць з Прýсами.",
+    "why": "Князь Конрад Мазовецкий пригласил Тевтонский орден (1226) для борьбы с языческими пруссами. Это решение оказалось роковым: орден создал собственное государство, ставшее врагом Польши.",
+    "difficulty": 3,
+    "tags": [
+      "даты",
+      "крестоносцы"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_lajkonik",
+    "category": "historia",
+    "q_ru": "Что такое легенда о Лайконике (Lajkonik)?",
+    "q_pl": "Czym jest legenda o Lajkoniku?",
+    "a_pl": "Lajkonik to człowiek przebrany za Tatara na drewnianym koniu. To stara tradycja z Krakowa.",
+    "a_ru": "Лайконик — это человек, переодетый татарином, на деревянном коне. Это старая традиция Кракова.",
+    "translit": "Лáйконик то чłóвек пшебрáны за Татáра на дрэвня́ным кóню. То стáра трады́цья з Крáкова.",
+    "why": "Лайконик — краковская легенда и традиция: всадник в восточном (татарском) наряде на деревянном коне. По преданию связана с победой краковчан над татарами в XIII веке.",
+    "difficulty": 2,
+    "tags": [
+      "легенды",
+      "культура"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "his_patroni_polski",
+    "category": "historia",
+    "q_ru": "Кто покровители (святые патроны) Польши?",
+    "q_pl": "Kto jest patronem Polski?",
+    "a_pl": "Głównymi patronami Polski są święty Wojciech, święty Stanisław i Najświętsza Maryja Panna Królowa Polski.",
+    "a_ru": "Главные святые покровители Польши — святой Войцех, святой Станислав и Пресвятая Дева Мария Королева Польши.",
+    "translit": "Гłýвными патрóнами Пóльски сон щéнты Вóйчех, щéнты Станьислав и Найщéнтша Мáрыя Пáнна Крýлёва Пóльски.",
+    "why": "Главные покровители Польши: св. Войцех, св. Станислав и Богородица Дева Мария Королева Польши. Их статус как главных патронов был подтверждён папой Иоанном XXIII в 1962–1963 годах.",
+    "difficulty": 2,
+    "tags": [
+      "религия",
+      "символы"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_sw_wojciech",
+    "category": "historia",
+    "q_ru": "Кто такой святой Войцех (św. Wojciech)?",
+    "q_pl": "Kim był święty Wojciech?",
+    "a_pl": "Święty Wojciech był biskupem i męczennikiem. Zginął w 997 roku, a jego grób jest w Gnieźnie.",
+    "a_ru": "Святой Войцех был епископом и мучеником. Он погиб в 997 году, его могила находится в Гнезно.",
+    "translit": "Щéнты Вóйчех быў б́искупэм и менчéнником. Зѓинон в дзевéнцьсэт дзевеньдзешóнт щóдмым рóку, а éго груб ест в Гнéзне.",
+    "why": "Святой Войцех (Адальберт) — епископ, погибший в 997 году при миссии к языческим пруссам. Его мощи покоятся в Гнезно; один из главных покровителей Польши.",
+    "difficulty": 3,
+    "tags": [
+      "религия",
+      "люди",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_sw_jadwiga",
+    "category": "historia",
+    "q_ru": "Какие две святые Ядвиги есть в польской истории?",
+    "q_pl": "Które dwie święte Jadwigi są w polskiej historii?",
+    "a_pl": "Są dwie: święta Jadwiga Śląska, księżna, oraz święta królowa Jadwiga Andegaweńska, którą koronowano na króla w 1384 roku.",
+    "a_ru": "Их две: святая Ядвига Силезская, княгиня, и святая королева Ядвига Анжуйская, которую короновали как короля в 1384 году.",
+    "translit": "Сон две: щéнта Ядв́ига Щлóнска, кщéнжна, óраз щéнта крýлёва Ядв́ига Андэгавéньска, ктýрон коронóвано на крýля в ты́сёнц тшы́ста ощемдзешóнт чвáртым рóку.",
+    "why": "Ядвига Силезская (XIII в., канонизирована 1267) — княгиня, покровительница Силезии. Ядвига Анжуйская (XIV в., канонизирована в 1997 Иоанном Павлом II) — королева, коронованная как «король Польши» в 1384 году, жена Ягайло.",
+    "difficulty": 3,
+    "tags": [
+      "религия",
+      "короли",
+      "люди"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_potop",
+    "category": "historia",
+    "q_ru": "Что такое \"шведский потоп\" (potop szwedzki)?",
+    "q_pl": "Co to był potop szwedzki?",
+    "a_pl": "Potop szwedzki to najazd Szwecji na Polskę w latach 1655–1660. Szwedzi zajęli prawie cały kraj, ale Polska w końcu wygrała.",
+    "a_ru": "Шведский потоп — это нашествие Швеции на Польшу в 1655–1660 годах. Шведы заняли почти всю страну, но Польша в итоге победила.",
+    "translit": "Потоп швэдзки то найазд Швэцьи на Польскэ в латах тысёнц шэщьчьсэт пеньчдзещёнт пеньчь до тысёнц шэщьчьсэт шэщьчдзещёнт. Швэдзи зайэли пщэви цалы край, але Польска в коньцу выграла.",
+    "why": "Один из самых тяжёлых периодов в истории Речи Посполитой. Название \"потоп\" дал роман Генрика Сенкевича.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "войны"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_kordecki",
+    "category": "historia",
+    "q_ru": "Кто такой Августин Кордецкий и чем знаменита оборона Ясной Горы?",
+    "q_pl": "Kim był Augustyn Kordecki i czym była obrona Jasnej Góry?",
+    "a_pl": "Augustyn Kordecki był przeorem klasztoru na Jasnej Górze. W 1655 roku dowodził obroną klasztoru przed Szwedami. Obrona Jasnej Góry stała się symbolem oporu.",
+    "a_ru": "Августин Кордецкий был приором монастыря на Ясной Гуре. В 1655 году он руководил обороной монастыря от шведов. Оборона Ясной Гуры стала символом сопротивления.",
+    "translit": "Аугустын Кордэцки был пшэорэм класстору на Ясней Гужэ. В тысёнц шэщьчьсэт пеньчдзещёнт пеньчь року доводзил оброно класстору пшэд Швэдами. Оброна Ясней Гуры стала ще симболэм опору.",
+    "why": "Ясна Гура (Ченстохова) — главная святыня Польши с иконой Чёрной Мадонны. Успешная оборона переломила настроение в войне со шведами.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_rozbiory",
+    "category": "historia",
+    "q_ru": "Когда были три раздела Речи Посполитой?",
+    "q_pl": "Kiedy były trzy rozbiory Rzeczypospolitej?",
+    "a_pl": "Pierwszy rozbiór był w 1772 roku, drugi w 1793 roku, a trzeci w 1795 roku. Po trzecim rozbiorze Polska zniknęła z mapy Europy.",
+    "a_ru": "Первый раздел был в 1772 году, второй в 1793 году, а третий в 1795 году. После третьего раздела Польша исчезла с карты Европы.",
+    "translit": "Первши розбюр был в тысёнц щедэмсэт щедэмдзещёнт два року, други в тысёнц щедэмсэт дзевеньчдзещёнт тши, а тшэчи в тысёнц щедэмсэт дзевеньчдзещёнт пеньчь. По тшэчим розбёжэ Польска зникнэла з мапы Европы.",
+    "why": "После третьего раздела 1795 года Польша утратила независимость на 123 года, до 1918 года.",
+    "difficulty": 2,
+    "tags": [
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_rozbiory_panstwa",
+    "category": "historia",
+    "q_ru": "Какие страны участвовали в разделах Польши?",
+    "q_pl": "Które państwa brały udział w rozbiorach Polski?",
+    "a_pl": "W rozbiorach Polski brały udział trzy państwa: Rosja, Prusy i Austria.",
+    "a_ru": "В разделах Польши участвовали три государства: Россия, Пруссия и Австрия.",
+    "translit": "В розбёрах Польски бралы удзял тши паньства: Росья, Прусы и Аустрья.",
+    "why": "Россия и Пруссия участвовали во всех трёх разделах, Австрия — в первом и третьем.",
+    "difficulty": 1,
+    "tags": [
+      "факты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_poniatowski",
+    "category": "historia",
+    "q_ru": "Кто был последним королём Польши?",
+    "q_pl": "Kto był ostatnim królem Polski?",
+    "a_pl": "Ostatnim królem Polski był Stanisław August Poniatowski. Panował w latach 1764–1795, do trzeciego rozbioru.",
+    "a_ru": "Последним королём Польши был Станислав Август Понятовский. Он правил в 1764–1795 годах, до третьего раздела.",
+    "translit": "Остатним крулем Польски был Станислав Аугуст Понятовски. Пановал в латах тысёнц щедэмсэт шэщьчдзещёнт чтэры до тысёнц щедэмсэт дзевеньчдзещёнт пеньчь, до тшэчего розбёру.",
+    "why": "При нём была принята Конституция 3 мая 1791 года. После третьего раздела он отрёкся от престола.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_targowica",
+    "category": "historia",
+    "q_ru": "Что такое Тарговицкая конфедерация?",
+    "q_pl": "Co to była konfederacja targowicka?",
+    "a_pl": "Konfederacja targowicka to spisek polskich magnatów z 1792 roku. Wezwali oni Rosję na pomoc przeciwko Konstytucji 3 maja.",
+    "a_ru": "Тарговицкая конфедерация — это заговор польских магнатов 1792 года. Они призвали Россию на помощь против Конституции 3 мая.",
+    "translit": "Конфэдэрацья тарговицка то списэк польских магнатув з тысёнц щедэмсэт дзевеньчдзещёнт два року. Вэзвали они Росьэ на помоц пшэцивко Конституцьи тшэчего мая.",
+    "why": "В Польше слово \"targowiczanin\" стало синонимом предателя. Конфедерация привела ко второму разделу страны.",
+    "difficulty": 3,
+    "tags": [
+      "даты",
+      "факты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_kosciuszko",
+    "category": "historia",
+    "q_ru": "Кто такой Тадеуш Костюшко и что такое восстание Костюшко?",
+    "q_pl": "Kim był Tadeusz Kościuszko i czym była insurekcja kościuszkowska?",
+    "a_pl": "Tadeusz Kościuszko był polskim bohaterem narodowym. W 1794 roku poprowadził powstanie przeciwko Rosji i Prusom, zwane insurekcją kościuszkowską.",
+    "a_ru": "Тадеуш Костюшко был польским национальным героем. В 1794 году он возглавил восстание против России и Пруссии, называемое восстанием Костюшко.",
+    "translit": "Тадэуш Кощчюшко был польским бохатэрэм народовым. В тысёнц щедэмсэт дзевеньчдзещёнт чтэры року попровадзил поввстане пшэцивко Росьи и Прусом, званэ инсурэкцьон кощчюшковсон.",
+    "why": "Костюшко также участвовал в войне за независимость США. Известна битва под Рацлавицами и присяга на рынке в Кракове.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_konstytucja3maja",
+    "category": "historia",
+    "q_ru": "Что такое Конституция 3 мая 1791 года?",
+    "q_pl": "Co to była Konstytucja 3 maja 1791 roku?",
+    "a_pl": "Konstytucja 3 maja to pierwsza konstytucja w Europie i druga na świecie. Uchwalono ją 3 maja 1791 roku, żeby zreformować państwo.",
+    "a_ru": "Конституция 3 мая — это первая конституция в Европе и вторая в мире. Её приняли 3 мая 1791 года, чтобы реформировать государство.",
+    "translit": "Конституцья тшэчего мая то первша конституцья в Европе и друга на щвеце. Ухвалоно йон тшэчего мая тысёнц щедэмсэт дзевеньчдзещёнт еднэго року, жэбы зрэформовачь паньство.",
+    "why": "Первой в мире была Конституция США (1787). 3 мая — государственный праздник Польши.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "факты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_listopadowe",
+    "category": "historia",
+    "q_ru": "Что такое Ноябрьское восстание?",
+    "q_pl": "Co to było powstanie listopadowe?",
+    "a_pl": "Powstanie listopadowe to zryw narodowy przeciwko Rosji w latach 1830–1831. Wybuchło w nocy 29 listopada 1830 roku w Warszawie.",
+    "a_ru": "Ноябрьское восстание — это национальное выступление против России в 1830–1831 годах. Оно вспыхнуло в ночь на 29 ноября 1830 года в Варшаве.",
+    "translit": "Поввстане листопадовэ то зрыв народовы пшэцивко Росьи в латах тысёнц ощемсэт тшидзещчи до тысёнц ощемсэт тшидзещчи едэн. Выбухло в ноцы дваджещча дзевёнтэго листопада тысёнц ощемсэт тшидзещчи року в Варшаве.",
+    "why": "Восстание против Российской империи в Царстве Польском. Окончилось поражением, многие участники эмигрировали.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "войны"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_styczniowe",
+    "category": "historia",
+    "q_ru": "Что такое Январское восстание?",
+    "q_pl": "Co to było powstanie styczniowe?",
+    "a_pl": "Powstanie styczniowe to największy zryw narodowy przeciwko Rosji w latach 1863–1864. Było to powstanie partyzanckie.",
+    "a_ru": "Январское восстание — это крупнейшее национальное выступление против России в 1863–1864 годах. Это было партизанское восстание.",
+    "translit": "Поввстане стычнёвэ то найвенкши зрыв народовы пшэцивко Росьи в латах тысёнц ощемсэт шэщьчдзещёнт тши до тысёнц ощемсэт шэщьчдзещёнт чтэры. Было то поввстане партызанцке.",
+    "why": "Самое продолжительное польское восстание XIX века. После поражения усилилась русификация.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "войны"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_nadniemnem",
+    "category": "historia",
+    "q_ru": "Кто написал роман \"Над Неманом\" (Nad Niemnem)?",
+    "q_pl": "Kto napisał powieść \"Nad Niemnem\"?",
+    "a_pl": "Powieść \"Nad Niemnem\" napisała Eliza Orzeszkowa. Akcja powieści nawiązuje do powstania styczniowego.",
+    "a_ru": "Роман \"Над Неманом\" написала Элиза Ожешкова. Сюжет романа связан с Январским восстанием.",
+    "translit": "Повещчь \"Над Немнэм\" написала Элиза Ожэшкова. Акцья повещчи навёнзуе до поввстаня стычнёвэго.",
+    "why": "Один из важнейших польских реалистических романов (1888). Ожешкова — классик польской литературы XIX века.",
+    "difficulty": 3,
+    "tags": [
+      "литература",
+      "люди"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_pantadeusz",
+    "category": "historia",
+    "q_ru": "Кто написал поэму \"Пан Тадеуш\"?",
+    "q_pl": "Kto napisał \"Pana Tadeusza\"?",
+    "a_pl": "\"Pana Tadeusza\" napisał Adam Mickiewicz. To narodowa epopeja Polski, wydana w 1834 roku.",
+    "a_ru": "\"Пана Тадеуша\" написал Адам Мицкевич. Это национальная эпопея Польши, изданная в 1834 году.",
+    "translit": "\"Пана Тадэуша\" написал Адам Мицкевич. То народова эпопэя Польски, выдана в тысёнц ощемсэт тшидзещчи чтэры року.",
+    "why": "Адам Мицкевич — величайший польский поэт-романтик. Поэма начинается словами \"Litwo! Ojczyzno moja!\".",
+    "difficulty": 2,
+    "tags": [
+      "литература",
+      "люди"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_wieden1683",
+    "category": "historia",
+    "q_ru": "Что такое Венская битва 1683 года?",
+    "q_pl": "Co to była bitwa pod Wiedniem w 1683 roku?",
+    "a_pl": "Bitwa pod Wiedniem to zwycięstwo nad Turkami w 1683 roku. Polskim wojskiem dowodził król Jan III Sobieski.",
+    "a_ru": "Венская битва — это победа над турками в 1683 году. Польским войском командовал король Ян III Собеский.",
+    "translit": "Битва под Веднем то звыченьство над Турками в тысёнц шэщьчьсэт ощемдзещёнт тши року. Польским войскем доводзил круль Ян Тшэчи Собески.",
+    "why": "Также называется \"odsiecz wiedeńska\". Собеский остановил турецкое продвижение в Европу, его прозвали \"львом Лехистана\".",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "войны",
+      "люди"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_sobieski",
+    "category": "historia",
+    "q_ru": "Кто такой Ян III Собеский?",
+    "q_pl": "Kim był Jan III Sobieski?",
+    "a_pl": "Jan III Sobieski był królem Polski. Wygrał bitwę pod Wiedniem w 1683 roku przeciwko Turkom.",
+    "a_ru": "Ян III Собеский был королём Польши. Он выиграл Венскую битву в 1683 году против турок.",
+    "translit": "Ян Тшэчи Собески был крулем Польски. Выграл битвэ под Веднем в тысёнц шэщьчьсэт ощемдзещёнт тши року пшэцивко Туркам.",
+    "why": "Один из самых известных польских королей, прославленный полководец. Правил в 1674–1696 годах.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_bitwawarszawska1920",
+    "category": "historia",
+    "q_ru": "Что такое Варшавская битва 1920 года (Чудо на Висле)?",
+    "q_pl": "Co to była Bitwa Warszawska 1920 roku, czyli Cud nad Wisłą?",
+    "a_pl": "Bitwa Warszawska to zwycięstwo Polski nad Rosją bolszewicką w sierpniu 1920 roku. Nazywa się ją Cudem nad Wisłą.",
+    "a_ru": "Варшавская битва — это победа Польши над большевистской Россией в августе 1920 года. Её называют Чудом на Висле.",
+    "translit": "Битва Варшавска то звыченьство Польски над Росьон большэвицкон в щерпню тысёнц дзевеньчьсэт дваджещчего року. Называ ще йон Цудэм над Висло.",
+    "why": "Битва спасла независимость Польши и остановила распространение большевизма на запад. Командовал Юзеф Пилсудский.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "войны"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_powstaniewarszawskie1944",
+    "category": "historia",
+    "q_ru": "Что такое Варшавское восстание 1944 года?",
+    "q_pl": "Co to było powstanie warszawskie 1944 roku?",
+    "a_pl": "Powstanie warszawskie to zryw przeciwko Niemcom. Wybuchło 1 sierpnia 1944 roku i trwało 63 dni. Zakończyło się klęską.",
+    "a_ru": "Варшавское восстание — это выступление против немцев. Оно вспыхнуло 1 августа 1944 года и длилось 63 дня. Закончилось поражением.",
+    "translit": "Поввстане варшавске то зрыв пшэцивко Немцом. Выбухло первшэго щерпня тысёнц дзевеньчьсэт чтэрдзещчи чтэры року и трвало шэщьчдзещёнт тши дни. Законьчыло ще кленскон.",
+    "why": "Организовано Армией Крайовой. Немцы разрушили Варшаву почти полностью. Не путать с восстанием в гетто 1943 года.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "войны"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_solidarnosc",
+    "category": "historia",
+    "q_ru": "Что такое \"Солидарность\" (Solidarność)?",
+    "q_pl": "Co to była Solidarność?",
+    "a_pl": "Solidarność to niezależny związek zawodowy, założony w 1980 roku w Gdańsku. Jego przywódcą był Lech Wałęsa.",
+    "a_ru": "\"Солидарность\" — это независимый профсоюз, основанный в 1980 году в Гданьске. Его лидером был Лех Валенса.",
+    "translit": "Солидарношчь то незалэжны звёнзэк заводовы, заложоны в тысёнц дзевеньчьсэт ощемдзещёнтым року в Гданьску. Его пшывудцон был Лех Валэнса.",
+    "why": "Первый независимый профсоюз в социалистическом блоке, возник после забастовок на верфи в Гданьске. Сыграл ключевую роль в падении коммунизма.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "люди",
+      "факты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_stanwojenny",
+    "category": "historia",
+    "q_ru": "Что связано с 13 декабря 1981 года?",
+    "q_pl": "Co wydarzyło się 13 grudnia 1981 roku?",
+    "a_pl": "13 grudnia 1981 roku generał Wojciech Jaruzelski wprowadził w Polsce stan wojenny. Skierowano go przeciwko Solidarności.",
+    "a_ru": "13 декабря 1981 года генерал Войцех Ярузельский ввёл в Польше военное положение. Оно было направлено против \"Солидарности\".",
+    "translit": "Тшинастэго грудня тысёнц дзевеньчьсэт ощемдзещёнт еднэго року гэнэрал Войчех Ярузэльски впровадзил в Польсцэ стан военны. Скеровано го пшэцивко Солидарнощчи.",
+    "why": "Военное положение длилось до 1983 года. Многие активисты \"Солидарности\" были интернированы.",
+    "difficulty": 2,
+    "tags": [
+      "даты",
+      "люди"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_prezydenci",
+    "category": "historia",
+    "q_ru": "Назовите президентов Польши после 1989 года по порядку.",
+    "q_pl": "Wymień prezydentów Polski po 1989 roku po kolei.",
+    "a_pl": "Prezydenci Polski po 1989 roku to: Lech Wałęsa, Aleksander Kwaśniewski, Lech Kaczyński, Bronisław Komorowski i Andrzej Duda.",
+    "a_ru": "Президенты Польши после 1989 года: Лех Валенса, Александр Квасьневский, Лех Качиньский, Бронислав Коморовский и Анджей Дуда.",
+    "translit": "Прэзидэнчи Польски по тысёнц дзевеньчьсэт ощемдзещёнт дзевёнтым року то: Лех Валэнса, Александэр Квасьневски, Лех Качиньски, Бронислав Коморовски и Анджэй Дуда.",
+    "why": "Перечислены по порядку правления. Лех Качиньский погиб в авиакатастрофе под Смоленском в 2010 году.",
+    "difficulty": 3,
+    "tags": [
+      "люди",
+      "факты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "his_walesa",
+    "category": "historia",
+    "q_ru": "Кто был первым президентом Польши после 1989 года?",
+    "q_pl": "Kto był pierwszym prezydentem Polski po 1989 roku?",
+    "a_pl": "Pierwszym prezydentem Polski wybranym w wyborach powszechnych był Lech Wałęsa. Był też przywódcą Solidarności i laureatem Nagrody Nobla.",
+    "a_ru": "Первым президентом Польши, избранным на всеобщих выборах, был Лех Валенса. Он также был лидером \"Солидарности\" и лауреатом Нобелевской премии.",
+    "translit": "Первшым прэзидэнтэм Польски выбраным в выборах повшэхных был Лех Валэнса. Был тэж пшывудцон Солидарнощчи и лаурэатэм Награды Нобля.",
+    "why": "Валенса получил Нобелевскую премию мира в 1983 году. Был президентом в 1990–1995 годах.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "даты"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_regiony",
+    "category": "geografia",
+    "q_ru": "Какие главные исторические регионы Польши вы знаете?",
+    "q_pl": "Jakie są główne regiony historyczne Polski?",
+    "a_pl": "Najważniejsze regiony to Wielkopolska, Małopolska, Mazowsze, Pomorze, Śląsk, Warmia i Mazury oraz Podlasie.",
+    "a_ru": "Важнейшие регионы — это Великопольша, Малопольша, Мазовше, Поморье, Силезия, Вармия и Мазуры, а также Подляшье.",
+    "translit": "Найважнейше регьёны то Велькопольска, Малопольска, Мазовше, Поможе, Щлёнск, Вармя и Мазуры орaz Подляще.",
+    "why": "Это историко-географические земли Польши. Силезия делится на Górny (Верхнюю) и Dolny (Нижнюю).",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_sasiedzi",
+    "category": "geografia",
+    "q_ru": "С какими странами граничит Польша?",
+    "q_pl": "Z jakimi krajami graniczy Polska?",
+    "a_pl": "Polska graniczy z siedmioma krajami: z Niemcami, Czechami, Słowacją, Ukrainą, Białorusią, Litwą i Rosją.",
+    "a_ru": "Польша граничит с семью странами: с Германией, Чехией, Словакией, Украиной, Беларусью, Литвой и Россией.",
+    "translit": "Польска граничы з щедмёма краями: з Немцами, Чехами, Словацён, Украйнон, Бялорусён, Литвон и Росьён.",
+    "why": "Семь соседей. С Россией граница проходит через Калининградскую область (obwód kaliningradzki).",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_morze",
+    "category": "geografia",
+    "q_ru": "Есть ли у Польши выход к морю? К какому?",
+    "q_pl": "Czy Polska ma dostęp do morza? Do jakiego?",
+    "a_pl": "Tak, Polska ma dostęp do Morza Bałtyckiego. Wybrzeże leży na północy kraju.",
+    "a_ru": "Да, у Польши есть выход к Балтийскому морю. Побережье находится на севере страны.",
+    "translit": "Так, Польска ма доступ до Можа Балтыцкего. Выбжеже лежы на пулноцы краю.",
+    "why": "Балтийское море на севере. На побережье — важные порты Гданьск, Гдыня, Щецин.",
+    "difficulty": 1,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_stolica",
+    "category": "geografia",
+    "q_ru": "Какая столица Польши и какие ещё крупные города вы знаете?",
+    "q_pl": "Jaka jest stolica Polski i jakie inne duże miasta znasz?",
+    "a_pl": "Stolicą Polski jest Warszawa. Inne duże miasta to Kraków, Łódź, Wrocław, Poznań i Gdańsk.",
+    "a_ru": "Столица Польши — Варшава. Другие крупные города — Краков, Лодзь, Вроцлав, Познань и Гданьск.",
+    "translit": "Столицон Польски ест Варшава. Инне дуже мяста то Кракув, Лудзь, Вроцлав, Познань и Гданьск.",
+    "why": "Варшава — крупнейший город и столица. Краков был столицей до 1596 года.",
+    "difficulty": 1,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_pierwsza_stolica",
+    "category": "geografia",
+    "q_ru": "Какой город был первой столицей Польши?",
+    "q_pl": "Które miasto było pierwszą stolicą Polski?",
+    "a_pl": "Pierwszą stolicą Polski było Gniezno. Później stolicą był Kraków, a od 1596 roku Warszawa.",
+    "a_ru": "Первой столицей Польши было Гнезно. Позже столицей был Краков, а с 1596 года — Варшава.",
+    "translit": "Первшон столицон Польски было Гнезно. Пузней столицон был Кракув, а од тыщёнц пеньчсэт девеньчдзещёнт шустэго року Варшава.",
+    "why": "Гнезно — колыбель польской государственности при Пястах. Перенос в Варшаву связан с королём Сигизмундом III.",
+    "difficulty": 3,
+    "tags": [
+      "география",
+      "история"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_wisla",
+    "category": "geografia",
+    "q_ru": "Какая самая длинная река в Польше?",
+    "q_pl": "Jaka jest najdłuższa rzeka w Polsce?",
+    "a_pl": "Najdłuższą rzeką w Polsce jest Wisła. Drugą dużą rzeką jest Odra.",
+    "a_ru": "Самая длинная река в Польше — Висла. Вторая крупная река — Одра.",
+    "translit": "Найдлужшон жекон в Польсце ест Висла. Другон дужон жекон ест Одра.",
+    "why": "Висла — около 1047 км, протекает через всю страну. Одра течёт на западе.",
+    "difficulty": 1,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_wisla_miasta",
+    "category": "geografia",
+    "q_ru": "Через какие города протекает Висла?",
+    "q_pl": "Przez jakie miasta przepływa Wisła?",
+    "a_pl": "Wisła przepływa przez Kraków, Warszawę, Toruń i Gdańsk. W Gdańsku wpada do Morza Bałtyckiego.",
+    "a_ru": "Висла протекает через Краков, Варшаву, Торунь и Гданьск. В Гданьске она впадает в Балтийское море.",
+    "translit": "Висла пшепливa пшез Кракув, Варшавэн, Торунь и Гданьск. В Гданьску впадa до Можа Балтыцкего.",
+    "why": "Висла связывает юг и север страны и впадает в Балтику в районе Гданьска.",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_jeziora",
+    "category": "geografia",
+    "q_ru": "Какие самые большие озёра в Польше и где они?",
+    "q_pl": "Jakie są największe jeziora w Polsce i gdzie się znajdują?",
+    "a_pl": "Największe jeziora to Śniardwy i Mamry. Leżą one na Mazurach, na północnym wschodzie kraju.",
+    "a_ru": "Самые большие озёра — Снярдвы и Мамры. Они находятся на Мазурах, на северо-востоке страны.",
+    "translit": "Найвенкше езёра то Щнярдвы и Мамры. Лежон оне на Мазурах, на пулноцным всходзе краю.",
+    "why": "Мазуры — край тысячи озёр, популярное место отдыха. Снярдвы — крупнейшее озеро Польши.",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_gora",
+    "category": "geografia",
+    "q_ru": "Какая самая высокая гора в Польше?",
+    "q_pl": "Jaki jest najwyższy szczyt w Polsce?",
+    "a_pl": "Najwyższym szczytem w Polsce są Rysy. Leżą w Tatrach na południu kraju.",
+    "a_ru": "Самая высокая вершина в Польше — Рысы. Она находится в Татрах на юге страны.",
+    "translit": "Найвыжшым шчытэм в Польсце сон Рысы. Лежон в Татрах на полудню краю.",
+    "why": "Рысы — около 2499 м, в Татрах на границе со Словакией.",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_parki",
+    "category": "geografia",
+    "q_ru": "Сколько национальных парков в Польше и какие вы знаете?",
+    "q_pl": "Ile jest parków narodowych w Polsce i jakie znasz?",
+    "a_pl": "W Polsce jest 23 parki narodowe. Najbardziej znane to Białowieski, Tatrzański i Biebrzański Park Narodowy.",
+    "a_ru": "В Польше 23 национальных парка. Самые известные — Беловежский, Татранский и Бебжанский.",
+    "translit": "В Польсце ест двадзещча тши парки народовэ. Найбардзей знане то Бяловески, Татшаньски и Бебжаньски Парк Народовы.",
+    "why": "Беловежский парк известен зубрами и древним лесом, внесён в список ЮНЕСКО.",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_trojmiasto",
+    "category": "geografia",
+    "q_ru": "Какие крупные города на Балтийском побережье?",
+    "q_pl": "Jakie duże miasta leżą nad Morzem Bałtyckim?",
+    "a_pl": "Nad Bałtykiem leżą Gdańsk, Gdynia i Sopot, które tworzą Trójmiasto. Dużym miastem jest też Szczecin.",
+    "a_ru": "На Балтике находятся Гданьск, Гдыня и Сопот, которые образуют Труймясто. Крупный город — также Щецин.",
+    "translit": "Над Балтыкем лежон Гданьск, Гдыня и Сопот, ктуре творжон Труймясто. Дужым мястэм ест теж Щецин.",
+    "why": "Trójmiasto (Труймясто) — агломерация трёх городов: Гданьск, Гдыня, Сопот.",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_wawel",
+    "category": "geografia",
+    "q_ru": "Какие важнейшие средневековые сооружения есть в Кракове?",
+    "q_pl": "Jakie najważniejsze średniowieczne budowle są w Krakowie?",
+    "a_pl": "W Krakowie znajdują się Wawel, czyli zamek królewski, oraz Sukiennice na Rynku Głównym.",
+    "a_ru": "В Кракове находятся Вавель — королевский замок, а также Сукеннице на Главном рынке.",
+    "translit": "В Кракове знайдуйон щен Вавель, чыли замэк крулевски, орaz Сукеннице на Рынку Глувным.",
+    "why": "Вавель — резиденция польских королей. Сукеннице — средневековые торговые ряды.",
+    "difficulty": 3,
+    "tags": [
+      "география",
+      "история"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "geo_powierzchnia_ludnosc",
+    "category": "geografia",
+    "q_ru": "Какая площадь и население Польши?",
+    "q_pl": "Jaka jest powierzchnia i liczba ludności Polski?",
+    "a_pl": "Polska ma powierzchnię około 312 700 kilometrów kwadratowych. Mieszka w niej około 38 milionów ludzi.",
+    "a_ru": "Площадь Польши — около 312 700 квадратных километров. В ней живёт около 38 миллионов человек.",
+    "translit": "Польска ма повежхнен около тшыста двунащче тыщенцы щедэмщет километрув квадратовых. Мешка в ней около тшыдзещчи ощем мильёнув люди.",
+    "why": "По площади Польша — одна из крупнейших стран ЕС, население около 38 млн.",
+    "difficulty": 2,
+    "tags": [
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_wigilia",
+    "category": "tradycje",
+    "q_ru": "Что такое Wigilia и когда её отмечают?",
+    "q_pl": "Co to jest Wigilia i kiedy się ją obchodzi?",
+    "a_pl": "Wigilia to uroczysta kolacja w wieczór 24 grudnia. Rodzina zbiera się przy stole i czeka na pierwszą gwiazdkę, żeby zacząć kolację.",
+    "a_ru": "Вигилия — это торжественный ужин вечером 24 декабря. Семья собирается за столом и ждёт первой звезды, чтобы начать ужин.",
+    "translit": "Вигилия то уроче́ста коля́цья в вечу́р двудзе́стэго чва́ртэго гру́дня. Родзи́на збе́ра щен пши столе и чэ́ка на пе́рвщон гвя́здкэ, же́бы зачо́нчь коля́цьен.",
+    "why": "Wigilia (сочельник) — центральный момент польского Рождества; ужин начинают, когда на небе появляется первая звезда.",
+    "difficulty": 1,
+    "tags": [
+      "традиции",
+      "Рождество"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_12_potraw",
+    "category": "tradycje",
+    "q_ru": "Сколько блюд традиционно подают на ужин Wigilii и почему?",
+    "q_pl": "Ile potraw tradycyjnie podaje się na kolacji wigilijnej i dlaczego?",
+    "a_pl": "Tradycyjnie podaje się dwanaście potraw. Liczba dwanaście symbolizuje dwunastu apostołów.",
+    "a_ru": "Традиционно подают двенадцать блюд. Число двенадцать символизирует двенадцать апостолов.",
+    "translit": "Традыцы́йне пода́е щен двана́щче потра́в. Ли́чба двана́щче симболизу́е двуна́сту апо́столув.",
+    "why": "12 постных блюд — классический канон вигилийного стола, число связано с двенадцатью апостолами.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "Рождество",
+      "кухня"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_oplatek",
+    "category": "tradycje",
+    "q_ru": "Что такое opłatek и что с ним делают?",
+    "q_pl": "Co to jest opłatek i co się z nim robi?",
+    "a_pl": "Opłatek to cienki biały chlebek. Przed kolacją wigilijną ludzie dzielą się opłatkiem i składają sobie życzenia.",
+    "a_ru": "Облатек — это тонкий белый хлебец. Перед вигилийным ужином люди делятся облаткой и желают друг другу добра.",
+    "translit": "Опла́тэк то че́нки бя́лы хле́бэк. Пшед коля́цьон вигили́йон лю́дзе дзе́лон щен опла́ткем и скла́дайон собе жиче́ня.",
+    "why": "Преломление облатки (opłatek) с пожеланиями — важнейший обряд примирения и единения семьи на Wigilii.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "Рождество"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_puste_miejsce",
+    "category": "tradycje",
+    "q_ru": "Зачем на вигилийном столе оставляют пустое место и кладут сено под скатерть?",
+    "q_pl": "Po co przy stole wigilijnym zostawia się puste miejsce i kładzie się siano pod obrus?",
+    "a_pl": "Puste miejsce zostawia się dla niespodziewanego gościa lub dla kogoś, kogo nie ma. Siano pod obrusem przypomina o tym, że Jezus urodził się w stajni.",
+    "a_ru": "Пустое место оставляют для нежданного гостя или для того, кого нет рядом. Сено под скатертью напоминает, что Иисус родился в хлеву.",
+    "translit": "Пу́стэ ме́йсце зоставе́ща щен для неспо́дзеванэго го́щча люб для ко́гощ, ко́го не ма. Ща́но под о́брусэм пшипоми́на о тым, же Е́зус уродзи́л щен в ста́йни.",
+    "why": "Пустой прибор — знак гостеприимства и памяти об отсутствующих; сено символизирует ясли Христа.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "Рождество"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_potrawy_wigilijne",
+    "category": "tradycje",
+    "q_ru": "Какие традиционные блюда едят на Wigilii?",
+    "q_pl": "Jakie tradycyjne potrawy je się na Wigilii?",
+    "a_pl": "Na Wigilii je się barszcz z uszkami, karpia, pierogi, kutię i pije się kompot z suszu. Potrawy są postne, bez mięsa.",
+    "a_ru": "На Вигилии едят борщ с ушками, карпа, пироги, кутью и пьют компот из сухофруктов. Блюда постные, без мяса.",
+    "translit": "На вигили́и е щен баршч з у́шками, ка́рпя, пе́роги, ку́тен и пе́е щен ко́мпот з су́шу. Потра́вы сон по́стнэ, без мен́са.",
+    "why": "Классические постные блюда вигилийного стола; мясо традиционно не подают.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "Рождество",
+      "кухня"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_koledy",
+    "category": "tradycje",
+    "q_ru": "Что такое kolędy?",
+    "q_pl": "Co to są kolędy?",
+    "a_pl": "Kolędy to polskie pieśni bożonarodzeniowe. Śpiewa się je w czasie świąt Bożego Narodzenia, na przykład „Cicha noc”.",
+    "a_ru": "Колядки — это польские рождественские песни. Их поют во время Рождества, например «Тихая ночь».",
+    "translit": "Коле́нды то по́льске пе́щни божонародзе́ниовэ. Щпе́ва щен е в ча́се щвёнт Бо́жэго Народзе́ня, на пши́клад „Ци́ха ноц”.",
+    "why": "Kolędy — рождественские песнопения, неотъемлемая часть праздника; многие поют их за столом на Wigilii.",
+    "difficulty": 1,
+    "tags": [
+      "традиции",
+      "Рождество",
+      "музыка"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_wielkanoc",
+    "category": "tradycje",
+    "q_ru": "Что такое święconka и śmigus-dyngus на Пасху?",
+    "q_pl": "Co to jest święconka i śmigus-dyngus na Wielkanoc?",
+    "a_pl": "Święconka to koszyczek z jedzeniem, który święci się w kościele w Wielką Sobotę. Śmigus-dyngus to zwyczaj polewania się wodą w poniedziałek wielkanocny.",
+    "a_ru": "Свенцонка — это корзинка с едой, которую освящают в костёле в Великую субботу. Смигус-дынгус — обычай обливаться водой в пасхальный понедельник.",
+    "translit": "Щвенцо́нка то коши́чэк з едзе́нем, кту́ры щве́нчи щен в кощче́ле в Ве́лькон Собо́тэ. Щми́гус-ды́нгус то зви́чай поле́ваня щен во́дон в понедзя́лэк велькано́цны.",
+    "why": "Święconka — освящение пасхальной снеди; śmigus-dyngus (Lany Poniedziałek) — обливание водой в понедельник после Пасхи.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "Пасха"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_boze_cialo",
+    "category": "tradycje",
+    "q_ru": "Что такое праздник Boże Ciało?",
+    "q_pl": "Co to jest święto Bożego Ciała?",
+    "a_pl": "Boże Ciało to katolickie święto. Wierni idą w procesji ulicami i zatrzymują się przy czterech ołtarzach.",
+    "a_ru": "Божье Тело — католический праздник. Верующие идут процессией по улицам и останавливаются у четырёх алтарей.",
+    "translit": "Бо́жэ Ча́ло то католи́цке щве́нто. Ве́рни и́дон в проце́сьи у́лицами и затши́муйон щен пши чтэ́рэх олта́жах.",
+    "why": "Boże Ciało (праздник Тела и Крови Христовых) известно торжественными уличными процессиями с остановками у четырёх алтарей.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "религия"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_andrzejki",
+    "category": "tradycje",
+    "q_ru": "Что такое andrzejki?",
+    "q_pl": "Co to są andrzejki?",
+    "a_pl": "Andrzejki to wieczór wróżb w nocy z 29 na 30 listopada. Najbardziej znana wróżba to lanie wosku przez ucho klucza.",
+    "a_ru": "Анджейки — это вечер гаданий в ночь с 29 на 30 ноября. Самое известное гадание — литьё воска через отверстие ключа.",
+    "translit": "Андже́йки то ве́чур вру́жб в но́цы з двудзе́стэго дзе́вёнтэго на тшидзе́стэго листопа́да. Найбардзе́й зна́на вру́жба то ла́не во́ску пшэз у́хо клю́ча.",
+    "why": "Andrzejki — народный вечер гаданий накануне дня святого Андрея (30 ноября), особенно популярный у молодёжи.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "гадания"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "trad_kuchnia_regionalna",
+    "category": "tradycje",
+    "q_ru": "Назови примеры региональных блюд Польши.",
+    "q_pl": "Podaj przykłady regionalnych potraw Polski.",
+    "a_pl": "Na Podhalu je się oscypek, czyli ser z mleka owczego. Na Śląsku popularna jest rolada, a na Podlasiu kartacze.",
+    "a_ru": "На Подгалье едят осцыпек — сыр из овечьего молока. В Силезии популярна рулада, а на Подляшье — картачи.",
+    "translit": "На Подха́лю е щен осцы́пэк, чы́ли сэр з мле́ка о́вчэго. На Щлё́нску популя́рна ест роля́да, а на Подля́щу карта́чэ.",
+    "why": "Региональная кухня: góralski oscypek (Подгалье), śląska rolada, podlaskie kartacze — типичный вопрос о культурном разнообразии.",
+    "difficulty": 3,
+    "tags": [
+      "традиции",
+      "кухня",
+      "регионы"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "trad_goscinnosc",
+    "category": "tradycje",
+    "q_ru": "Как в Польше выражают гостеприимство хлебом-солью?",
+    "q_pl": "Jak w Polsce wyraża się gościnność chlebem i solą?",
+    "a_pl": "Polacy są bardzo gościnni. Tradycyjnie wita się ważnych gości chlebem i solą, na przykład na weselu.",
+    "a_ru": "Поляки очень гостеприимны. По традиции важных гостей встречают хлебом и солью, например на свадьбе.",
+    "translit": "Поля́цы сон ба́рдзо гощчи́нни. Традыцы́йне ви́та щен ва́жных го́щчи хле́бэм и со́лон, на пши́клад на весе́лю.",
+    "why": "Хлеб-соль (chleb i sól) — славянский знак гостеприимства; в Польше им встречают новобрачных и почётных гостей.",
+    "difficulty": 2,
+    "tags": [
+      "традиции",
+      "гостеприимство"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "lud_chopin",
+    "category": "ludzie",
+    "q_ru": "Кто такой Фридерик Шопен?",
+    "q_pl": "Kim był Fryderyk Chopin?",
+    "a_pl": "Fryderyk Chopin był polskim kompozytorem i pianistą. Komponował przede wszystkim muzykę na fortepian, na przykład mazurki i polonezy.",
+    "a_ru": "Фридерик Шопен был польским композитором и пианистом. Он сочинял прежде всего музыку для фортепиано, например мазурки и полонезы.",
+    "translit": "Фридэ́рык Шо́пэн был по́льским композы́торэм и пяни́стон. Компоно́вал пшэдэ вши́стким му́зыкэ на фортэпя́н, на пши́клад мазу́рки и поло́нэзы.",
+    "why": "Шопен (1810–1849) — величайший польский композитор-романтик, символ национальной культуры.",
+    "difficulty": 1,
+    "tags": [
+      "люди",
+      "музыка"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "lud_sklodowska",
+    "category": "ludzie",
+    "q_ru": "Чем знаменита Мария Склодовская-Кюри?",
+    "q_pl": "Z czego słynie Maria Skłodowska-Curie?",
+    "a_pl": "Maria Skłodowska-Curie była polską uczoną. Dostała dwie Nagrody Nobla, z fizyki i z chemii, za badania nad promieniotwórczością.",
+    "a_ru": "Мария Склодовская-Кюри была польской учёной. Она получила две Нобелевские премии — по физике и по химии — за исследования радиоактивности.",
+    "translit": "Ма́рья Склодо́вска-Кюри́ была по́льскон учо́нон. Доста́ла две Награ́ды Но́бля, з фи́зыки и з хе́мии, за бада́ня над променётву́рчощчён.",
+    "why": "Склодовская-Кюри — первый человек, получивший две Нобелевские премии в разных науках (физика 1903, химия 1911).",
+    "difficulty": 1,
+    "tags": [
+      "люди",
+      "наука"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "lud_kopernik",
+    "category": "ludzie",
+    "q_ru": "Кто такой Николай Коперник и что он открыл?",
+    "q_pl": "Kim był Mikołaj Kopernik i co odkrył?",
+    "a_pl": "Mikołaj Kopernik był polskim astronomem. Udowodnił, że to Ziemia krąży wokół Słońca, a nie Słońce wokół Ziemi.",
+    "a_ru": "Николай Коперник был польским астрономом. Он доказал, что Земля вращается вокруг Солнца, а не Солнце вокруг Земли.",
+    "translit": "Мико́лай Копэ́рник был по́льским астроно́мэм. Удово́днил, же то Зе́мя кро́нжи во́кул Сло́нца, а не Сло́нце во́кул Зе́ми.",
+    "why": "Коперник (1473–1543) — автор гелиоцентрической системы, совершил переворот в астрономии.",
+    "difficulty": 1,
+    "tags": [
+      "люди",
+      "наука"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "lud_jan_pawel_ii",
+    "category": "ludzie",
+    "q_ru": "Кто такой Иоанн Павел II?",
+    "q_pl": "Kim był Jan Paweł II?",
+    "a_pl": "Jan Paweł II, czyli Karol Wojtyła, był polskim papieżem. Był głową Kościoła katolickiego od 1978 do 2005 roku.",
+    "a_ru": "Иоанн Павел II, то есть Кароль Войтыла, был польским Папой Римским. Он возглавлял Католическую церковь с 1978 по 2005 год.",
+    "translit": "Ян Па́вэл Дру́ги, чы́ли Ка́роль Войты́ла, был по́льским папе́жэм. Был гло́вон Кощчо́ла католи́цкего од ты́щёнц дзеве́нчсэт щедэмдзеще́нт о́смэго до две ты́щёнцэ пёнтэго ро́ку.",
+    "why": "Кароль Войтыла — первый Папа-поляк, понтифик в 1978–2005 гг., канонизирован в 2014 году.",
+    "difficulty": 1,
+    "tags": [
+      "люди",
+      "религия"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "lud_walesa",
+    "category": "ludzie",
+    "q_ru": "Кто такой Лех Валенса?",
+    "q_pl": "Kim jest Lech Wałęsa?",
+    "a_pl": "Lech Wałęsa był przywódcą „Solidarności” i pierwszym prezydentem Polski wybranym w wolnych wyborach. Dostał też Pokojową Nagrodę Nobla.",
+    "a_ru": "Лех Валенса был лидером «Солидарности» и первым президентом Польши, избранным на свободных выборах. Он также получил Нобелевскую премию мира.",
+    "translit": "Лех Вауэ́нса был пшиву́дцон „Солида́рнощчи” и пе́рвшым прэзидэ́нтэм По́льски ви́бранным в во́льных ви́борах. Доста́л тэж Поко́ёвон Награ́дэ Но́бля.",
+    "why": "Валенса — лидер профсоюза Solidarność, лауреат Нобелевской премии мира (1983), президент Польши в 1990–1995 гг.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "история",
+      "политика"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "lud_mickiewicz",
+    "category": "ludzie",
+    "q_ru": "Кто такой Адам Мицкевич?",
+    "q_pl": "Kim był Adam Mickiewicz?",
+    "a_pl": "Adam Mickiewicz był najważniejszym polskim poetą romantycznym. Napisał epopeję narodową „Pan Tadeusz”.",
+    "a_ru": "Адам Мицкевич был важнейшим польским поэтом-романтиком. Он написал национальную эпопею «Пан Тадеуш».",
+    "translit": "А́дам Мицке́вич был найважне́йшым по́льским поэ́тон романты́чным. Написа́л эпопе́ен народо́вон „Пан Таде́уш”.",
+    "why": "Мицкевич (1798–1855) — национальный поэт Польши; «Pan Tadeusz» начинается словами «Litwo! Ojczyzno moja!».",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "литература"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "lud_sienkiewicz",
+    "category": "ludzie",
+    "q_ru": "Кто такой Генрик Сенкевич?",
+    "q_pl": "Kim był Henryk Sienkiewicz?",
+    "a_pl": "Henryk Sienkiewicz był polskim pisarzem. Dostał Nagrodę Nobla, a jego najbardziej znana powieść to „Quo Vadis”.",
+    "a_ru": "Генрик Сенкевич был польским писателем. Он получил Нобелевскую премию, а его самый известный роман — «Камо грядеши» (Quo Vadis).",
+    "translit": "Хэ́нрык Щенке́вич был по́льским писа́жэм. Доста́л Награ́дэ Но́бля, а е́го найбардзе́й зна́на пове́щчь то „Кво Ва́дис”.",
+    "why": "Сенкевич — лауреат Нобелевской премии по литературе (1905); известен «Quo Vadis» и трилогией о Речи Посполитой.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "литература"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "lud_lem",
+    "category": "ludzie",
+    "q_ru": "Кто такой Станислав Лем?",
+    "q_pl": "Kim był Stanisław Lem?",
+    "a_pl": "Stanisław Lem był polskim pisarzem science fiction. Jego najbardziej znana powieść to „Solaris”.",
+    "a_ru": "Станислав Лем был польским писателем-фантастом. Его самый известный роман — «Солярис».",
+    "translit": "Стани́слав Лем был по́льским писа́жэм са́йенс фи́кшн. Е́го найбардзе́й зна́на пове́щчь то „Соля́рис”.",
+    "why": "Лем (1921–2006) — крупнейший польский фантаст, переведён на десятки языков; «Solaris» экранизирован.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "литература"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "lud_wajda",
+    "category": "ludzie",
+    "q_ru": "Кто такой Анджей Вайда?",
+    "q_pl": "Kim był Andrzej Wajda?",
+    "a_pl": "Andrzej Wajda był słynnym polskim reżyserem filmowym. Dostał Oscara za całokształt twórczości.",
+    "a_ru": "Анджей Вайда был знаменитым польским кинорежиссёром. Он получил «Оскар» за вклад в киноискусство.",
+    "translit": "А́нджей Ва́йда был сли́нным по́льским рэжисэ́рэм фильмо́вым. Доста́л Оска́ра за цалокшта́лт твурчо́щчи.",
+    "why": "Вайда (1926–2016) — классик польского кино, получил почётный «Оскар» в 2000 году.",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "кино"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "lud_szymborska",
+    "category": "ludzie",
+    "q_ru": "Кто такая Вислава Шимборская?",
+    "q_pl": "Kim była Wisława Szymborska?",
+    "a_pl": "Wisława Szymborska była polską poetką. Dostała Nagrodę Nobla w dziedzinie literatury w 1996 roku.",
+    "a_ru": "Вислава Шимборская была польской поэтессой. Она получила Нобелевскую премию по литературе в 1996 году.",
+    "translit": "Висла́ва Шимбо́рска была по́льскон поэ́ткон. Доста́ла Награ́дэ Но́бля в дзедзи́не литэрату́ры в ты́щёнц дзеве́нчсэт дзеве́нчдзеще́нт шу́стым ро́ку.",
+    "why": "Шимборская — лауреат Нобелевской премии по литературе (1996); ещё один польский нобелиат — поэт Чеслав Милош (1980).",
+    "difficulty": 2,
+    "tags": [
+      "люди",
+      "литература"
+    ],
+    "source": "culture.pl",
+    "personal": false
+  },
+  {
+    "id": "wsp_ue",
+    "category": "wspolczesna",
+    "q_ru": "Когда Польша вступила в Европейский союз?",
+    "q_pl": "Kiedy Polska wstąpiła do Unii Europejskiej?",
+    "a_pl": "Polska wstąpiła do Unii Europejskiej 1 maja 2004 roku.",
+    "a_ru": "Польша вступила в Европейский союз 1 мая 2004 года.",
+    "translit": "По́льска встомпи́ла до У́нии Эуропэ́йскей пе́рвшэго ма́я две ты́щёнцэ чва́ртэго ро́ку.",
+    "why": "Польша вошла в ЕС 1 мая 2004 года в рамках крупнейшего расширения союза.",
+    "difficulty": 1,
+    "tags": [
+      "современность",
+      "политика",
+      "ЕС"
+    ],
+    "source": "gov.pl",
+    "personal": false
+  },
+  {
+    "id": "wsp_nato",
+    "category": "wspolczesna",
+    "q_ru": "Когда Польша вступила в НАТО?",
+    "q_pl": "Kiedy Polska wstąpiła do NATO?",
+    "a_pl": "Polska wstąpiła do NATO w 1999 roku.",
+    "a_ru": "Польша вступила в НАТО в 1999 году.",
+    "translit": "По́льска встомпи́ла до НА́ТО в ты́щёнц дзеве́нчсэт дзеве́нчдзеще́нт дзеве́нтым ро́ку.",
+    "why": "Польша стала членом НАТО 12 марта 1999 года вместе с Чехией и Венгрией.",
+    "difficulty": 1,
+    "tags": [
+      "современность",
+      "политика",
+      "НАТО"
+    ],
+    "source": "gov.pl",
+    "personal": false
+  },
+  {
+    "id": "wsp_waluta",
+    "category": "wspolczesna",
+    "q_ru": "Какая валюта в Польше?",
+    "q_pl": "Jaka waluta jest w Polsce?",
+    "a_pl": "Walutą Polski jest złoty, w skrócie PLN. Polska nie wprowadziła jeszcze euro.",
+    "a_ru": "Валюта Польши — злотый, сокращённо PLN. Польша пока не ввела евро.",
+    "translit": "Валю́тон По́льски ест зло́ты, в скру́че Пэ-эль-эн. По́льска не впровадзи́ла е́шчэ э́уро.",
+    "why": "Польша входит в ЕС, но сохраняет национальную валюту — польский злотый (zł, PLN); евро не введено.",
+    "difficulty": 1,
+    "tags": [
+      "современность",
+      "экономика"
+    ],
+    "source": "gov.pl",
+    "personal": false
+  },
+  {
+    "id": "wsp_ustroj",
+    "category": "wspolczesna",
+    "q_ru": "Какой государственный строй в Польше?",
+    "q_pl": "Jaki ustrój polityczny ma Polska?",
+    "a_pl": "Polska jest republiką i demokracją parlamentarną. Władzę mają prezydent, premier oraz parlament, czyli Sejm i Senat.",
+    "a_ru": "Польша — это республика и парламентская демократия. Власть принадлежит президенту, премьер-министру и парламенту — Сейму и Сенату.",
+    "translit": "По́льска ест рэпу́бликон и дэмокра́цьон парламэнта́рнон. Вла́дзэ ма́йон прэзидэ́нт, прэ́мер о́раз парла́мэнт, чы́ли Сэйм и Сэ́нат.",
+    "why": "Польша — парламентская республика; законодательная власть у двухпалатного парламента (Sejm и Senat).",
+    "difficulty": 2,
+    "tags": [
+      "современность",
+      "политика"
+    ],
+    "source": "gov.pl",
+    "personal": false
+  },
+  {
+    "id": "wsp_prezydent",
+    "category": "wspolczesna",
+    "q_ru": "Кто сейчас президент Польши?",
+    "q_pl": "Kto jest teraz prezydentem Polski?",
+    "a_pl": "Prezydentem Polski jest Karol Nawrocki. Objął urząd w 2025 roku, po Andrzeju Dudzie.",
+    "a_ru": "Президент Польши — Кароль Навроцкий. Он вступил в должность в 2025 году, после Анджея Дуды.",
+    "translit": "Прэзидэ́нтэм По́льски ест Ка́роль Навро́цки. О́бйол у́жонд в две ты́щёнцэ дваздзе́стэго пёнтэго ро́ку, по Анджэ́ю Ду́дзе.",
+    "why": "Кароль Навроцкий победил на президентских выборах 2025 года и вступил в должность 6 августа 2025-го, сменив Анджея Дуду (президент в 2015–2025).",
+    "difficulty": 3,
+    "tags": [
+      "современность",
+      "политика"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  },
+  {
+    "id": "wsp_stolica",
+    "category": "wspolczesna",
+    "q_ru": "Какая столица и крупнейший город Польши?",
+    "q_pl": "Jaka jest stolica i największe miasto Polski?",
+    "a_pl": "Stolicą i największym miastem Polski jest Warszawa. Mieszka tam około dwóch milionów ludzi.",
+    "a_ru": "Столица и крупнейший город Польши — Варшава. Там живёт около двух миллионов человек.",
+    "translit": "Столи́цон и найве́нкшым мя́стэм По́льски ест Варша́ва. Ме́шка там о́коло двух мильо́нув лю́дзи.",
+    "why": "Варшава — столица и самый большой город Польши; на гербе города — русалка (Syrenka).",
+    "difficulty": 1,
+    "tags": [
+      "современность",
+      "география"
+    ],
+    "source": "pl.wikipedia.org",
+    "personal": false
+  }
+]
