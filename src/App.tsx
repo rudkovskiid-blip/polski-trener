@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useStore } from "./store/useStore";
 import BottomNav, { type Tab } from "./components/BottomNav";
 import Learn from "./screens/Learn";
+import Notebook from "./screens/Notebook";
 import Exam from "./screens/Exam";
 import Progress from "./screens/Progress";
 import Guide from "./screens/Guide";
@@ -10,6 +11,7 @@ export default function App() {
   const [tab, setTab] = useState<Tab>("learn");
   const init = useStore((s) => s.init);
   const loaded = useStore((s) => s.loaded);
+  const toast = useStore((s) => s.toast);
 
   useEffect(() => {
     init();
@@ -26,6 +28,8 @@ export default function App() {
         </div>
       ) : tab === "learn" ? (
         <Learn />
+      ) : tab === "notebook" ? (
+        <Notebook />
       ) : tab === "exam" ? (
         <Exam />
       ) : tab === "progress" ? (
@@ -33,6 +37,7 @@ export default function App() {
       ) : (
         <Guide />
       )}
+      {toast && <div className="toast">{toast}</div>}
       <BottomNav tab={tab} onChange={setTab} />
     </div>
   );

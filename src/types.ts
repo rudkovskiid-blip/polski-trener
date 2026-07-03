@@ -79,6 +79,21 @@ export interface ExamResult {
   weakCategories: CategoryId[];
 }
 
+// Отметка «вопрос переписан в тетрадку от руки».
+export interface NotebookMark {
+  id: string; // = card.id
+  date: number; // timestamp (ms)
+}
+
+// Игровое состояние: XP, босс, ачивки, дни занятий.
+export interface GameState {
+  xp: number;
+  bossWins: number;
+  bossLastWin: number | null; // timestamp (ms)
+  ach: Record<string, number>; // id ачивки -> timestamp получения
+  days: string[]; // YYYY-MM-DD — дни, когда занимался
+}
+
 // Полный снимок для экспорта/импорта.
 export interface BackupSnapshot {
   app: "polski-trener";
@@ -87,4 +102,8 @@ export interface BackupSnapshot {
   progress: CardProgress[];
   personal: PersonalAnswer[];
   exams: ExamResult[];
+  // Новые разделы (опциональны для совместимости со старыми бэкапами).
+  notebook?: NotebookMark[];
+  custom?: Card[];
+  game?: GameState;
 }
