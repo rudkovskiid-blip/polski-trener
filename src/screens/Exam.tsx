@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useStore } from "../store/useStore";
-import { ALL_CARDS } from "../data/bank";
+import { useStore, useAllCards } from "../store/useStore";
 import { CATEGORY_BY_ID } from "../data/categories";
-import { sampleExam } from "../lib/queue";
+import { sampleExam, shuffle } from "../lib/queue";
 import { speakPl } from "../lib/tts";
+import { BOSS, bossCooldownDays } from "../lib/game";
 import type { Card, CategoryId, ExamResult, Grade } from "../types";
 import CategoryFilter from "../components/CategoryFilter";
 import AnswerBlock from "../components/AnswerBlock";
 import TapWords from "../components/TapWords";
 
-type Phase = "setup" | "run" | "result";
+type Phase = "setup" | "run" | "result" | "bossResult";
+type Mode = "exam" | "boss";
 
 const SIZES = [10, 20, 30];
 
@@ -23,30 +24,68 @@ export default function Exam() {
   const selected = useStore((s) => s.selectedCategories);
   const grade = useStore((s) => s.grade);
   const addExam = useStore((s) => s.addExam);
+  const notebook = useStore((s) => s.notebook);
+  const game = useStore((s) => s.game);
+  const bossFinished = useStore((s) => s.bossFinished);
+  const allCards = useAllCards();
 
   const [phase, setPhase] = useState<Phase>("setup");
+  const [mode, setMode] = useState<Mode>("exam");
   const [size, setSize] = useState(20);
   const [queue, setQueue] = useState<Card[]>([]);
   const [idx, setIdx] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [sec, setSec] = useState(0);
   const startRef = useRef(0);
-  // тэги результата по каждой карточке
   const [marks, setMarks] = useState<{ card: Card; grade: Grade }[]>([]);
+  // босс
+  const [qSec, setQSec] = useState<number>(BOSS.secPerQuestion);
+  const [timedOut, setTimedOut] = useState(false);
+  const [fails, setFails] = useState(0);
+  const [bossWon, setBossWon] = useState(false);
 
   const poolSize = useMemo(
-    () => ALL_CARDS.filter((c) => selected.has(c.category)).length,
-    [selected],
+    () => allCards.filter((c) => selected.has(c.category)).length,
+    [allCards, selected],
   );
+  const markedCards = useMemo(
+    () => allCards.filter((c) => notebook[c.id]),
+    [allCards, notebook],
+  );
+  const cooldown = bossCooldownDays(game);
 
+  // Секундомер обычного экзамена.
   useEffect(() => {
-    if (phase !== "run") return;
-    const t = setInterval(() => setSec(Math.floor((Date.now() - startRef.current) / 1000)), 500);
+    if (phase !== "run" || mode !== "exam") return;
+    const t = setInterval(
+      () => setSec(Math.floor((Date.now() - startRef.current) / 1000)),
+      500,
+    );
     return () => clearInterval(t);
-  }, [phase]);
+  }, [phase, mode]);
+
+  // Таймер на вопрос в режиме босса.
+  useEffect(() => {
+    if (phase !== "run" || mode !== "boss" || revealed) return;
+    setQSec(BOSS.secPerQuestion);
+    const t = setInterval(() => {
+      setQSec((s) => {
+        if (s <= 1) {
+          clearInterval(t);
+          setTimedOut(true);
+          setRevealed(true);
+          return 0;
+        }
+        return s - 1;
+      });
+    }, 1000);
+    return () => clearInterval(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, mode, idx]);
 
   const start = () => {
-    setQueue(sampleExam(ALL_CARDS, selected, size));
+    setMode("exam");
+    setQueue(sampleExam(allCards, selected, size));
     setIdx(0);
     setRevealed(false);
     setMarks([]);
@@ -55,13 +94,44 @@ export default function Exam() {
     setPhase("run");
   };
 
+  const startBoss = () => {
+    setMode("boss");
+    setQueue(shuffle(markedCards).slice(0, BOSS.size));
+    setIdx(0);
+    setRevealed(false);
+    setTimedOut(false);
+    setFails(0);
+    setMarks([]);
+    startRef.current = Date.now();
+    setPhase("run");
+  };
+
   const current = queue[idx];
 
   const mark = (g: Grade) => {
     if (!current) return;
-    grade(current.id, g); // экзамен тоже идёт в зачёт FSRS
+    grade(current.id, g); // экзамен и босс идут в зачёт FSRS
     const nextMarks = [...marks, { card: current, grade: g }];
     setMarks(nextMarks);
+
+    if (mode === "boss") {
+      const nextFails = fails + (g === "again" ? 1 : 0);
+      setFails(nextFails);
+      const lost = nextFails > BOSS.failsAllowed;
+      const finished = idx + 1 >= queue.length;
+      if (lost || finished) {
+        const win = !lost;
+        setBossWon(win);
+        bossFinished(win);
+        setPhase("bossResult");
+      } else {
+        setIdx(idx + 1);
+        setRevealed(false);
+        setTimedOut(false);
+      }
+      return;
+    }
+
     if (idx + 1 >= queue.length) {
       finish(nextMarks);
     } else {
@@ -105,6 +175,9 @@ export default function Exam() {
 
   // --- Setup ---
   if (phase === "setup") {
+    const bossBlocked =
+      markedCards.length < BOSS.minMarked ? `нужно ${BOSS.minMarked}+ вопросов в тетрадке` :
+      cooldown > 0 ? `Консул вернётся через ${cooldown} дн.` : null;
     return (
       <div className="screen">
         <h1 className="h-title">Экзамен</h1>
@@ -136,6 +209,67 @@ export default function Exam() {
         </div>
         <button className="btn primary" disabled={poolSize === 0} onClick={start}>
           Начать экзамен
+        </button>
+
+        <div className="panel" style={{ marginTop: 14 }}>
+          <div className="row-between">
+            <b>⚔️ Босс: Консул</b>
+            <span className="muted" style={{ fontSize: 13 }}>
+              побед: {game.bossWins}
+            </span>
+          </div>
+          <p className="muted" style={{ fontSize: 13.5, margin: "6px 0 10px" }}>
+            {BOSS.size} вопросов из твоей тетрадки, {BOSS.secPerQuestion} секунд на
+            вопрос, допустимо {BOSS.failsAllowed} ошибки. Победа — +100 XP, Консул
+            уходит на неделю.
+          </p>
+          <button
+            className="btn ghost"
+            disabled={!!bossBlocked}
+            onClick={startBoss}
+          >
+            {bossBlocked ? `⚔️ ${bossBlocked}` : "⚔️ Вызвать Консула"}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // --- Результат босса ---
+  if (phase === "bossResult") {
+    const good = marks.filter((m) => m.grade !== "again").length;
+    return (
+      <div className="screen">
+        <h1 className="h-title">{bossWon ? "Консул повержен! 🏆" : "Консул победил… 🪦"}</h1>
+        <div className="stat-grid">
+          <div className="stat">
+            <div className="num">{good}</div>
+            <div className="cap">верно</div>
+          </div>
+          <div className="stat">
+            <div className="num">{fails}</div>
+            <div className="cap">ошибок</div>
+          </div>
+          <div className="stat">
+            <div className="num">{bossWon ? "+100" : "0"}</div>
+            <div className="cap">XP</div>
+          </div>
+        </div>
+        <div className="panel">
+          {bossWon ? (
+            <div>
+              Уряд взят штурмом. Консул вернётся через {BOSS.cooldownDays} дней —
+              к тому времени подтяни слабые темы. Побед всего: <b>{game.bossWins}</b>.
+            </div>
+          ) : (
+            <div>
+              В этот раз не хватило. Прогони слабые вопросы в «Учить» и вызывай
+              Консула снова — он не уходит после поражения.
+            </div>
+          )}
+        </div>
+        <button className="btn primary" onClick={() => setPhase("setup")}>
+          {bossWon ? "Забрать трофей" : "Вернуться к подготовке"}
         </button>
       </div>
     );
@@ -199,14 +333,26 @@ export default function Exam() {
   // --- Run ---
   if (!current) return null;
   const cat = CATEGORY_BY_ID[current.category];
+  const isBoss = mode === "boss";
+  const hpPct = Math.round(((queue.length - idx) / queue.length) * 100);
   return (
     <div className="screen">
       <div className="exam-top">
         <span>
-          Вопрос {idx + 1} / {queue.length}
+          {isBoss ? "⚔️ " : ""}Вопрос {idx + 1} / {queue.length}
+          {isBoss && (
+            <span className="muted"> · ошибок {fails}/{BOSS.failsAllowed}</span>
+          )}
         </span>
-        <span className="timer">⏱ {fmt(sec)}</span>
+        <span className="timer" style={isBoss && qSec <= 5 && !revealed ? { color: "var(--red)" } : undefined}>
+          ⏱ {isBoss ? `${qSec} с` : fmt(sec)}
+        </span>
       </div>
+      {isBoss && (
+        <div className="boss-hp">
+          <span style={{ width: `${hpPct}%` }} />
+        </div>
+      )}
       <div className="exam-progress">
         <span style={{ width: `${(idx / queue.length) * 100}%` }} />
       </div>
@@ -224,6 +370,9 @@ export default function Exam() {
             </span>
           </div>
         )}
+        {revealed && timedOut && (
+          <div className="boss-timeout">⏱ Время вышло!</div>
+        )}
         {revealed && <AnswerBlock card={current} />}
       </div>
 
@@ -232,6 +381,17 @@ export default function Exam() {
           <button className="btn primary" onClick={() => setRevealed(true)}>
             Показать ответ
           </button>
+        ) : isBoss ? (
+          <div className="grade-row" style={{ position: "static" }}>
+            <button className="grade again" onClick={() => mark("again")}>
+              Nie znałem ✗
+            </button>
+            {!timedOut && (
+              <button className="grade good" onClick={() => mark("good")}>
+                Znałem ✓
+              </button>
+            )}
+          </div>
         ) : (
           <div className="grade-row" style={{ position: "static" }}>
             <button className="grade again" onClick={() => mark("again")}>

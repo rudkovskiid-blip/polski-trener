@@ -1,16 +1,19 @@
 import { useMemo, useRef, useState } from "react";
-import { useStore } from "../store/useStore";
-import { ALL_CARDS } from "../data/bank";
+import { useStore, useAllCards } from "../store/useStore";
 import { CATEGORIES } from "../data/categories";
 import { isMastered } from "../lib/scheduler";
 import { downloadBackup, uploadBackup } from "../lib/backup";
 import { BANK } from "../data/bank";
+import { rankOf, CITIES, ACHIEVEMENTS, streakDays } from "../lib/game";
 
 export default function Progress() {
   const progress = useStore((s) => s.progress);
   const exams = useStore((s) => s.exams);
+  const game = useStore((s) => s.game);
   const refresh = useStore((s) => s.refresh);
   const reset = useStore((s) => s.reset);
+  const flashStore = useStore((s) => s.flash);
+  const allCards = useAllCards();
   const fileRef = useRef<HTMLInputElement>(null);
   const [toast, setToast] = useState<string | null>(null);
 
@@ -20,12 +23,12 @@ export default function Progress() {
   };
 
   const overall = useMemo(() => {
-    const total = ALL_CARDS.length;
+    const total = allCards.length;
     const seen = Object.keys(progress).length;
     let mastered = 0;
     let attempts = 0;
     let correct = 0;
-    for (const c of ALL_CARDS) {
+    for (const c of allCards) {
       const p = progress[c.id];
       if (p) {
         if (isMastered(p)) mastered++;
@@ -35,19 +38,25 @@ export default function Progress() {
     }
     const acc = attempts ? Math.round((correct / attempts) * 100) : 0;
     return { total, seen, mastered, acc };
-  }, [progress]);
+  }, [allCards, progress]);
 
   const perCat = useMemo(
     () =>
       CATEGORIES.map((cat) => {
-        const cards = ALL_CARDS.filter((c) => c.category === cat.id);
+        const cards = allCards.filter((c) => c.category === cat.id);
         const mastered = cards.filter((c) => isMastered(progress[c.id])).length;
         const seen = cards.filter((c) => progress[c.id]).length;
         const pct = cards.length ? Math.round((mastered / cards.length) * 100) : 0;
         return { cat, total: cards.length, mastered, seen, pct };
       }),
-    [progress],
+    [allCards, progress],
   );
+
+  const rank = rankOf(game.xp);
+  const streak = streakDays(game.days);
+  const citiesOpen = CITIES.filter((c) => overall.mastered >= c.need).length;
+  const nextCity = CITIES.find((c) => overall.mastered < c.need) ?? null;
+  const achGot = ACHIEVEMENTS.filter((a) => game.ach[a.id]).length;
 
   const onImport = async (file: File) => {
     try {
@@ -60,7 +69,7 @@ export default function Progress() {
   };
 
   const onReset = async () => {
-    if (confirm("Сбросить весь прогресс? Это необратимо (сделай бэкап заранее).")) {
+    if (confirm("Сбросить весь прогресс, тетрадку и XP? Это необратимо (сделай бэкап заранее).")) {
       await reset();
       flash("Прогресс сброшен");
     }
@@ -70,6 +79,25 @@ export default function Progress() {
     <div className="screen">
       <h1 className="h-title">Прогресс</h1>
       <p className="h-sub">Освоено = карточка ушла в долгий интервал (≥ 21 дня).</p>
+
+      <div className="panel">
+        <div className="row-between">
+          <b>
+            {rank.cur.emoji} {rank.cur.title}
+          </b>
+          <span className="muted" style={{ fontSize: 13 }}>
+            {game.xp} XP{streak > 1 ? ` · 🔥 ${streak} дн` : ""}
+          </span>
+        </div>
+        <div className="bar xp" style={{ marginTop: 8 }}>
+          <span style={{ width: `${rank.pct}%` }} />
+        </div>
+        <div className="muted" style={{ fontSize: 12.5, marginTop: 6 }}>
+          {rank.next
+            ? `До звания «${rank.next.title}» ещё ${rank.next.xp - game.xp} XP`
+            : "Максимальное звание!"}
+        </div>
+      </div>
 
       <div className="stat-grid">
         <div className="stat">
@@ -86,6 +114,65 @@ export default function Progress() {
         <div className="stat">
           <div className="num">{overall.acc}%</div>
           <div className="cap">точность</div>
+        </div>
+      </div>
+
+      <div className="panel">
+        <div className="row-between" style={{ marginBottom: 8 }}>
+          <b>🗺️ Путь к собесу</b>
+          <span className="muted" style={{ fontSize: 13 }}>
+            {citiesOpen}/{CITIES.length} городов
+          </span>
+        </div>
+        <div className="chips" style={{ marginBottom: 0 }}>
+          {CITIES.map((c) => {
+            const open = overall.mastered >= c.need;
+            const isNext = nextCity?.name === c.name;
+            return (
+              <button
+                key={c.name}
+                className={"chip" + (open ? " on" : "")}
+                style={isNext ? { borderColor: "var(--pl)" } : undefined}
+                onClick={() =>
+                  flashStore(
+                    open
+                      ? `${c.emoji} ${c.name}: ${c.fact}`
+                      : `🔒 ${c.name} откроется после ${c.need} освоенных (сейчас ${overall.mastered})`,
+                  )
+                }
+              >
+                {open ? c.emoji : "🔒"} {c.name}
+                {isNext ? ` · ${overall.mastered}/${c.need}` : ""}
+              </button>
+            );
+          })}
+        </div>
+        <div className="muted" style={{ fontSize: 12.5, marginTop: 8 }}>
+          Города открываются за освоенные вопросы. Финал — Warszawa, твой собес.
+        </div>
+      </div>
+
+      <div className="panel">
+        <div className="row-between" style={{ marginBottom: 8 }}>
+          <b>🏅 Ачивки</b>
+          <span className="muted" style={{ fontSize: 13 }}>
+            {achGot}/{ACHIEVEMENTS.length}
+          </span>
+        </div>
+        <div className="badge-grid">
+          {ACHIEVEMENTS.map((a) => {
+            const got = !!game.ach[a.id];
+            return (
+              <button
+                key={a.id}
+                className={"badge" + (got ? " got" : "")}
+                onClick={() => flashStore(`${got ? "🏅" : "🔒"} ${a.title}: ${a.desc}`)}
+              >
+                <span className="b-ico">{a.emoji}</span>
+                <span>{a.title}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

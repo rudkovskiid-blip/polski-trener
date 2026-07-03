@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useStore } from "../store/useStore";
-import { ALL_CARDS } from "../data/bank";
+import { useStore, useAllCards } from "../store/useStore";
 import { CATEGORY_BY_ID } from "../data/categories";
 import { buildLearnQueue, dueCount } from "../lib/queue";
 import { speakPl } from "../lib/tts";
@@ -13,6 +12,7 @@ export default function Learn() {
   const progress = useStore((s) => s.progress);
   const selected = useStore((s) => s.selectedCategories);
   const grade = useStore((s) => s.grade);
+  const allCards = useAllCards();
 
   const [queue, setQueue] = useState<Card[]>([]);
   const [idx, setIdx] = useState(0);
@@ -21,18 +21,18 @@ export default function Learn() {
   const [started, setStarted] = useState(false);
 
   const totalDue = useMemo(
-    () => dueCount(ALL_CARDS, progress, selected),
-    [progress, selected],
+    () => dueCount(allCards, progress, selected),
+    [allCards, progress, selected],
   );
 
   const startSession = useCallback(() => {
-    setQueue(buildLearnQueue(ALL_CARDS, progress, selected));
+    setQueue(buildLearnQueue(allCards, progress, selected));
     setIdx(0);
     setRevealed(false);
     setReviewed(0);
     setStarted(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selected]);
+  }, [selected, allCards]);
 
   const current = queue[idx];
   const done = started && idx >= queue.length;
