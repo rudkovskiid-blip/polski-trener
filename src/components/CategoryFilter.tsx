@@ -1,11 +1,11 @@
-import { useStore } from "../store/useStore";
+import { useStore, useAllCards } from "../store/useStore";
 import { CATEGORIES } from "../data/categories";
-import { ALL_CARDS } from "../data/bank";
 
 export default function CategoryFilter() {
   const selected = useStore((s) => s.selectedCategories);
   const toggle = useStore((s) => s.toggleCategory);
   const setAll = useStore((s) => s.setAllCategories);
+  const allCards = useAllCards();
 
   const allOn = selected.size === CATEGORIES.length;
 
@@ -18,7 +18,7 @@ export default function CategoryFilter() {
         {allOn ? "✓ " : ""}Все темы
       </button>
       {CATEGORIES.map((c) => {
-        const count = ALL_CARDS.filter((x) => x.category === c.id).length;
+        const count = allCards.filter((x) => x.category === c.id).length;
         const on = selected.has(c.id);
         return (
           <button

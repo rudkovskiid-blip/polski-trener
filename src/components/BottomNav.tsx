@@ -1,7 +1,8 @@
-export type Tab = "learn" | "exam" | "progress" | "guide";
+export type Tab = "learn" | "notebook" | "exam" | "progress" | "guide";
 
 const ITEMS: { id: Tab; ico: string; label: string }[] = [
   { id: "learn", ico: "🎓", label: "Учить" },
+  { id: "notebook", ico: "📓", label: "Тетрадка" },
   { id: "exam", ico: "⏱️", label: "Экзамен" },
   { id: "progress", ico: "📊", label: "Прогресс" },
   { id: "guide", ico: "📖", label: "Гайд" },
