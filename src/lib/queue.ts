@@ -48,6 +48,13 @@ export function buildLearnQueue(
   return interleaveByCategory(due);
 }
 
+// Очередь для повторения произвольного набора карточек (напр. отмеченных
+// в тетрадке): все переданные карточки, независимо от расписания, вперемешку
+// с чередованием тем.
+export function buildReviewQueue(cards: Card[]): Card[] {
+  return interleaveByCategory(cards);
+}
+
 // Сколько карточек к повторению сегодня (включая новые).
 export function dueCount(
   cards: Card[],

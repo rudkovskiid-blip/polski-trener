@@ -2,7 +2,9 @@ import { useMemo, useState } from "react";
 import { useStore, useAllCards } from "../store/useStore";
 import { CATEGORIES } from "../data/categories";
 import { speakPl, ttsSupported } from "../lib/tts";
+import { buildReviewQueue } from "../lib/queue";
 import AnswerBlock from "../components/AnswerBlock";
+import StudySession from "../components/StudySession";
 import type { Card, CategoryId } from "../types";
 
 type StatusFilter = "all" | "unmarked" | "marked";
@@ -20,6 +22,7 @@ export default function Notebook() {
   const allCards = useAllCards();
 
   const [status, setStatus] = useState<StatusFilter>("all");
+  const [reviewing, setReviewing] = useState(false);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [formOpen, setFormOpen] = useState(false);
   const [fCat, setFCat] = useState<CategoryId>("ogolne");
@@ -28,10 +31,11 @@ export default function Notebook() {
   const [fApl, setFApl] = useState("");
   const [fAru, setFAru] = useState("");
 
-  const marked = useMemo(
-    () => allCards.filter((c) => notebook[c.id]).length,
+  const markedCards = useMemo(
+    () => allCards.filter((c) => notebook[c.id]),
     [allCards, notebook],
   );
+  const marked = markedCards.length;
   const pct = allCards.length ? Math.round((marked / allCards.length) * 100) : 0;
 
   const byStatus = (c: Card) =>
@@ -74,12 +78,35 @@ export default function Notebook() {
     if (confirm("Удалить этот вопрос насовсем?")) removeCustomCard(id);
   };
 
+  // --- Режим повторения отмеченных карточек ---
+  if (reviewing) {
+    return (
+      <StudySession
+        build={() => buildReviewQueue(markedCards)}
+        onExit={() => setReviewing(false)}
+        exitLabel="К тетрадке"
+        doneTitle="Повторение завершено 🎉"
+      />
+    );
+  }
+
   return (
     <div className="screen">
       <h1 className="h-title">Тетрадка</h1>
       <p className="h-sub">
         Отмечай вопросы, которые уже переписал от руки. Галочка = вопрос в работе.
       </p>
+
+      <button
+        className="btn primary"
+        style={{ marginBottom: 14 }}
+        disabled={marked === 0}
+        onClick={() => setReviewing(true)}
+      >
+        {marked === 0
+          ? "Отметь вопросы, чтобы повторять"
+          : `🎓 Повторять из тетрадки (${marked})`}
+      </button>
 
       <div className="stat-grid">
         <div className="stat">
