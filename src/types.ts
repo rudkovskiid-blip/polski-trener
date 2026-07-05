@@ -25,6 +25,8 @@ export interface Card {
   a_ru: string;
   translit?: string;
   why?: string;
+  /** Мнемоника: созвучие, образ или рифма на русском — «крючок», как запомнить ответ. */
+  mnemonic?: string;
   difficulty?: 1 | 2 | 3;
   tags?: string[];
   source?: string;
@@ -57,6 +59,9 @@ export interface CardProgress {
   // Накопительная статистика для аналитики.
   attempts: number;
   correct: number;
+  // Метка последнего изменения (ms) — для слияния при облачной синхронизации
+  // по правилу «выигрывает более свежая запись».
+  updatedAt: number;
 }
 
 // Личный ответ пользователя для карточек personal-блока.

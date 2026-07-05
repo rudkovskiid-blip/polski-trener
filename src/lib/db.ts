@@ -125,6 +125,32 @@ export async function putGame(g: GameState): Promise<void> {
   await (await getDB()).put("meta", { key: "game", data: g });
 }
 
+// --- Пакетная запись (применение данных из облака при синхронизации) ---
+
+export async function putManyProgress(list: CardProgress[]): Promise<void> {
+  if (!list.length) return;
+  const db = await getDB();
+  const tx = db.transaction("progress", "readwrite");
+  await Promise.all(list.map((p) => tx.store.put(p)));
+  await tx.done;
+}
+
+export async function putManyPersonal(list: PersonalAnswer[]): Promise<void> {
+  if (!list.length) return;
+  const db = await getDB();
+  const tx = db.transaction("personal", "readwrite");
+  await Promise.all(list.map((p) => tx.store.put(p)));
+  await tx.done;
+}
+
+export async function putManyExams(list: ExamResult[]): Promise<void> {
+  if (!list.length) return;
+  const db = await getDB();
+  const tx = db.transaction("exams", "readwrite");
+  await Promise.all(list.map((e) => tx.store.put(e)));
+  await tx.done;
+}
+
 // --- Экспорт / импорт ---
 
 export async function exportSnapshot(version: string): Promise<BackupSnapshot> {

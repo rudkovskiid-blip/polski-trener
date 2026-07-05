@@ -37,6 +37,13 @@ import {
 } from "../lib/game";
 import { CATEGORIES } from "../data/categories";
 import { ALL_CARDS } from "../data/bank";
+import { supabase, isCloudEnabled } from "../lib/supabase";
+import { syncAll, pushProgress, pushPersonal, pushExam } from "../lib/sync";
+
+export interface AuthUser {
+  id: string;
+  email: string;
+}
 
 interface StoreState {
   loaded: boolean;
@@ -48,6 +55,13 @@ interface StoreState {
   game: GameState;
   toast: string | null;
   selectedCategories: Set<CategoryId>;
+
+  // Аккаунт и облачная синхронизация.
+  cloudEnabled: boolean;
+  user: AuthUser | null;
+  syncing: boolean;
+  lastSyncedAt: number | null;
+  syncError: string | null;
 
   init: () => Promise<void>;
   grade: (cardId: string, grade: Grade) => Promise<void>;
@@ -68,6 +82,10 @@ interface StoreState {
   setAllCategories: (on: boolean) => void;
   refresh: () => Promise<void>;
   reset: () => Promise<void>;
+
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
+  syncNow: () => Promise<void>;
 }
 
 const ALL_CAT_IDS = CATEGORIES.map((c) => c.id);
@@ -117,9 +135,37 @@ export const useStore = create<StoreState>((set, get) => {
     toast: null,
     selectedCategories: new Set<CategoryId>(ALL_CAT_IDS),
 
+    cloudEnabled: isCloudEnabled,
+    user: null,
+    syncing: false,
+    lastSyncedAt: null,
+    syncError: null,
+
     init: async () => {
       await get().refresh();
       set({ loaded: true });
+
+      // Восстанавливаем сессию и подписываемся на изменения входа/выхода.
+      if (isCloudEnabled && supabase) {
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        if (session?.user?.email) {
+          set({ user: { id: session.user.id, email: session.user.email } });
+          get().syncNow();
+        }
+        supabase.auth.onAuthStateChange((_event, session) => {
+          const u = session?.user;
+          const prev = get().user;
+          if (u?.email) {
+            set({ user: { id: u.id, email: u.email } });
+            // Синхронизируемся при новом входе.
+            if (!prev || prev.id !== u.id) get().syncNow();
+          } else {
+            set({ user: null });
+          }
+        });
+      }
     },
 
     refresh: async () => {
@@ -147,6 +193,8 @@ export const useStore = create<StoreState>((set, get) => {
       const next = applyGrade(prev, grade);
       await putProgress(next);
       set((s) => ({ progress: { ...s.progress, [cardId]: next } }));
+      const user = get().user;
+      if (user) pushProgress(user.id, next);
       const gain =
         grade === "good" ? XP.gradeGood : grade === "hard" ? XP.gradeHard : XP.gradeAgain;
       await applyGame((g) => ({ ...g, xp: g.xp + gain }), { logDay: true });
@@ -156,11 +204,15 @@ export const useStore = create<StoreState>((set, get) => {
       const entry: PersonalAnswer = { id, text, updatedAt: Date.now() };
       await putPersonal(entry);
       set((s) => ({ personal: { ...s.personal, [id]: entry } }));
+      const user = get().user;
+      if (user) pushPersonal(user.id, entry);
     },
 
     addExam: async (result) => {
       await putExam(result);
       set((s) => ({ exams: [result, ...s.exams] }));
+      const user = get().user;
+      if (user) pushExam(user.id, result);
       await applyGame((g) => g, { logDay: true });
     },
 
@@ -248,8 +300,54 @@ export const useStore = create<StoreState>((set, get) => {
       await dbResetAll();
       await get().refresh();
     },
+
+    login: async (email, password) => {
+      if (!supabase) throw new Error("Облако не настроено");
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password,
+      });
+      if (error) throw new Error(loginErrorRu(error.message));
+      const u = data.user;
+      if (u?.email) {
+        set({ user: { id: u.id, email: u.email } });
+        await get().syncNow();
+      }
+    },
+
+    logout: async () => {
+      if (supabase) await supabase.auth.signOut();
+      set({ user: null, lastSyncedAt: null, syncError: null });
+    },
+
+    syncNow: async () => {
+      const user = get().user;
+      if (!user || !isCloudEnabled) return;
+      set({ syncing: true, syncError: null });
+      try {
+        await syncAll(user.id);
+        await get().refresh();
+        set({ lastSyncedAt: Date.now() });
+      } catch (e) {
+        set({ syncError: (e as Error).message || "Ошибка синхронизации" });
+      } finally {
+        set({ syncing: false });
+      }
+    },
   };
 });
+
+// Понятные сообщения вместо технических английских.
+function loginErrorRu(msg: string): string {
+  const m = msg.toLowerCase();
+  if (m.includes("invalid login credentials"))
+    return "Неверный email или пароль.";
+  if (m.includes("email not confirmed"))
+    return "Email не подтверждён — проверь почту.";
+  if (m.includes("failed to fetch") || m.includes("network"))
+    return "Нет связи с сервером. Проверь интернет.";
+  return msg;
+}
 
 // Все карточки: банк + свои вопросы пользователя.
 export function useAllCards(): Card[] {

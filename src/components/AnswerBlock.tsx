@@ -51,6 +51,12 @@ export default function AnswerBlock({ card }: { card: Card }) {
 
       {card.why && <div className="a-why">💡 {card.why}</div>}
 
+      {card.mnemonic && (
+        <div className="a-mnemo">
+          <span className="a-mnemo-lbl">🧠 Как запомнить:</span> {card.mnemonic}
+        </div>
+      )}
+
       {card.personal && (
         <div className="a-block">
           <div className="lbl">Твой ответ (сохраняется на устройстве)</div>

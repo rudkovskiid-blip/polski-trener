@@ -21,7 +21,7 @@ const gradeToRating: Record<Grade, FsrsGrade> = {
 // Новая запись прогресса для незнакомой карточки.
 export function newProgress(id: string, now = new Date()): CardProgress {
   const c = createEmptyCard(now);
-  return fromFsrs(id, c, 0, 0);
+  return fromFsrs(id, c, 0, 0, now.getTime());
 }
 
 function toFsrs(p: CardProgress): FsrsCard {
@@ -43,6 +43,7 @@ function fromFsrs(
   c: FsrsCard,
   attempts: number,
   correct: number,
+  updatedAt: number,
 ): CardProgress {
   return {
     id,
@@ -57,6 +58,7 @@ function fromFsrs(
     last_review: c.last_review ? c.last_review.getTime() : undefined,
     attempts,
     correct,
+    updatedAt,
   };
 }
 
@@ -69,7 +71,7 @@ export function applyGrade(
   const { card } = f.next(toFsrs(prev), now, gradeToRating[grade]);
   const attempts = prev.attempts + 1;
   const correct = prev.correct + (grade === "good" ? 1 : 0);
-  return fromFsrs(prev.id, card, attempts, correct);
+  return fromFsrs(prev.id, card, attempts, correct, now.getTime());
 }
 
 // Карточка готова к повторению?

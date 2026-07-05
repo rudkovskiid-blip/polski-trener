@@ -25,9 +25,13 @@ jobs:
           cache: npm
       - run: npm ci
       # База для project-site: https://<user>.github.io/<repo>/
+      # Ключи Supabase (для сквозной синхронизации) берём из GitHub Secrets.
+      # Если их нет — сборка проходит, приложение работает офлайн.
       - run: npm run build
         env:
           VITE_BASE: "/${{ github.event.repository.name }}/"
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

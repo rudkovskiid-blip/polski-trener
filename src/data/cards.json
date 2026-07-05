@@ -46,7 +46,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org + culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Мешко — созвучно «мешок»: князь несёт мешок крестиков к купели. Рифма: «В девятьсот шестьдесят шесть — крест у Польши есть»."
   },
   {
     "id": "og_hymn_nazwa",
@@ -63,7 +64,8 @@
       "гимн"
     ],
     "source": "pl.wikipedia.org + gov.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Домбровский танцует мазурку, а Выбицкий ВЫБИВАЕТ на барабане слова гимна."
   },
   {
     "id": "og_hymn_pierwsza_linia",
@@ -80,7 +82,8 @@
       "гимн"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "«Jeszcze Polska nie zginęła» — почти по-русски: «Ещё Польша не сгинула». Учи как одну фразу-заклинание."
   },
   {
     "id": "og_swieta_panstwowe",
@@ -97,7 +100,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org + gov.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "11.11 — четыре единицы, как четыре штыка на параде Независимости. 3 мая — весной «расцветает» Конституция."
   },
   {
     "id": "og_swieta_katolickie",
@@ -166,7 +170,8 @@
       "литература"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "«СМС-Ш в Стокгольм»: Склодовская, Милош, Сенкевич, Шимборская."
   },
   {
     "id": "og_zubr",
@@ -200,7 +205,8 @@
       "музыка"
     ],
     "source": "pl.wikipedia.org + culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Монюшко — «на ушко»: шепчет оперу на ушко. Пендерецкий даёт музыке «пенделя». Шопена и так знаешь."
   },
   {
     "id": "og_rezyserzy",
@@ -217,7 +223,8 @@
       "кино"
     ],
     "source": "pl.wikipedia.org + culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "ВКП — «Великое Кино Польши»: Вайда, Кесьлёвский, Полански."
   },
   {
     "id": "og_smok_wawelski",
@@ -302,7 +309,8 @@
       "литература"
     ],
     "source": "pl.wikipedia.org + culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Два «-вича» плюс Словацкий: Мицкевич, Сенкевич + Словацкий (фамилия сама про «слова»)."
   },
   {
     "id": "og_tradycje",
@@ -319,7 +327,8 @@
       "праздники"
     ],
     "source": "pl.wikipedia.org + culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Свенцонка — «освящённая» корзинка. Смигус-дынгус — «смыть»: обливают водой в мокрый понедельник."
   },
   {
     "id": "og_papiez",
@@ -370,7 +379,8 @@
       "короли"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Рифма: «Тысяча двадцать пять — Храбрый корону смог взять». Храбрый — первым осмелился стать королём."
   },
   {
     "id": "his_mieszko_i",
@@ -387,7 +397,8 @@
       "короли"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Мешко — «мешок»: первый правитель принёс Польше «мешок» христианства (крещение 966)."
   },
   {
     "id": "his_testament_krzywoustego",
@@ -404,7 +415,8 @@
       "раздробленность"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Кривоустый «криво» поделил страну между сыновьями — началась раздробленность. Рифма: «Тысяча сто тридцать восемь — Польшу на куски разносим»."
   },
   {
     "id": "his_popiel",
@@ -437,7 +449,8 @@
       "короли"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Колодей — «колесо делай»: простой колесник, с чьего колеса «покатилась» династия Пястов."
   },
   {
     "id": "his_jan_matejko",
@@ -454,7 +467,8 @@
       "люди"
     ],
     "source": "culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Матейко — «матёрый»: малюет матёрые исторические полотна, «Грюнвальд» размером со стену."
   },
   {
     "id": "his_kopernik",
@@ -488,7 +502,8 @@
       "поговорки"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Казимир — «камень + мир»: принял деревянную Польшу, оставил каменную."
   },
   {
     "id": "his_kazimierz_wielki",
@@ -505,7 +520,8 @@
       "реформы"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Казимир — «камень + мир»: каменные замки и мир по новым законам (Уставам)."
   },
   {
     "id": "his_bitwa_plowce",
@@ -523,7 +539,8 @@
       "крестоносцы"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "1331 — цифры-зеркало (13|31): два войска лицом к лицу под Пловцами. Маленький Локоток («с локоток») побил крестоносцев."
   },
   {
     "id": "his_bitwa_grunwald",
@@ -541,7 +558,8 @@
       "крестоносцы"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Рифма: «Тысяча четыреста десять — будем орден месить». Командовал Ягайло."
   },
   {
     "id": "his_warnenczyk",
@@ -559,7 +577,8 @@
       "битвы"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Варненьчик = погиб под ВАРНОЙ — прозвище само подсказывает ответ. 1444: одинокая единица и три четвёрки — молодой король против рядов турок."
   },
   {
     "id": "his_pierwszy_jagiellon",
@@ -576,7 +595,8 @@
       "династии"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Ягайло → ЯГеллоны: династия названа его именем — значит, он и есть первый."
   },
   {
     "id": "his_ostatni_jagiellon",
@@ -594,7 +614,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Август — последний месяц лета, Зыгмунт Август — последнее «лето» Ягеллонов. Рифма: «Пятнадцать семьдесят два — династия мертва»."
   },
   {
     "id": "his_uniwersytet_jagiellonski",
@@ -611,7 +632,8 @@
       "культура"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Казимир Великий строил из камня — построил и «каменную школу». Рифма: «Тринадцать шестьдесят четыре — старейший вуз в польском мире»."
   },
   {
     "id": "his_szczerbiec",
@@ -628,7 +650,8 @@
       "короли"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Щербец — от «щербины» (зазубрины): меч с щербиной, которым короновали королей."
   },
   {
     "id": "his_konrad_mazowiecki",
@@ -645,7 +668,8 @@
       "крестоносцы"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Конрад «намазал» Польше беду — позвал крестоносцев. Рифма: «Тысяча двести двадцать шесть — рыцари в Польше есть»."
   },
   {
     "id": "his_lajkonik",
@@ -697,7 +721,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Войцех — «воин-чех»: он и правда пришёл из Чехии. Погиб в 997 — чуть не дожил до круглой тысячи. Могила в Гнезно — «гнезде» польской церкви."
   },
   {
     "id": "his_sw_jadwiga",
@@ -715,7 +740,8 @@
       "люди"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Две Ядвиги: Силезская — княгиня, Анжуйская — королева, которую короновали КАК КОРОЛЯ (женщина-король — сам по себе крючок)."
   },
   {
     "id": "his_potop",
@@ -732,7 +758,8 @@
       "войны"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Потоп — швед «топит» Польшу. 1655: две пятёрки — как две волны; и длился потоп 5 лет (до 1660)."
   },
   {
     "id": "his_kordecki",
@@ -749,7 +776,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Кордецкий — «кордон»: монах стал кордоном для шведов на Ясной Гуре (1655)."
   },
   {
     "id": "his_rozbiory",
@@ -765,7 +793,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Лесенка хвостов: 72 — 93 — 95. Рифма: «Семьдесят два — Польша жива, девяносто три — треснула изнутри, девяносто пять — исчезла опять»."
   },
   {
     "id": "his_rozbiory_panstwa",
@@ -798,7 +827,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Понятовский — «понятой» при разделе собственной страны. Правил до 1795 — до третьего раздела (одна дата — два ответа)."
   },
   {
     "id": "his_targowica",
@@ -815,7 +845,8 @@
       "факты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Тарговица — «торговцы»: магнаты «продали» реформы России в 1792 — за год до второго раздела."
   },
   {
     "id": "his_kosciuszko",
@@ -832,7 +863,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Костюшко — «костёр»: в 1794 разжёг костёр восстания. Ступенька лесенки 91→95."
   },
   {
     "id": "his_konstytucja3maja",
@@ -849,7 +881,8 @@
       "факты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Лесенка 91→95: Конституция 91, Тарговица 92, второй раздел 93, Костюшко 94, конец Польши 95. Пять лет — пять ступенек вниз."
   },
   {
     "id": "his_listopadowe",
@@ -866,7 +899,8 @@
       "войны"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Listopad = ноябрь: «листопадовое» восстание. Порядок: месяцы идут назад (ноябрь → январь), годы вперёд (1830 → 1863)."
   },
   {
     "id": "his_styczniowe",
@@ -883,7 +917,8 @@
       "войны"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Styczeń = январь. 1863: «63 партизана» — война была партизанской. Крючок: Варшавское восстание 1944 длилось тоже 63 дня."
   },
   {
     "id": "his_nadniemnem",
@@ -900,7 +935,8 @@
       "люди"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Ожешкова — «орешек»: Элиза сидит над Неманом и грызёт орешки. Роман — «крепкий орешек» про Январское восстание."
   },
   {
     "id": "his_pantadeusz",
@@ -917,7 +953,8 @@
       "люди"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Главный поэт написал главную эпопею: Мицкевич = «Пан Тадеуш»."
   },
   {
     "id": "his_wieden1683",
@@ -935,7 +972,8 @@
       "люди"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Рифма: «Шестнадцать восемьдесят три — турок под Веной потри». СОБеский — как верный пёс, отогнал турок от Вены."
   },
   {
     "id": "his_sobieski",
@@ -952,7 +990,8 @@
       "даты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Собеский = Вена 1683. Рифма: «Шестнадцать восемьдесят три — турок под Веной потри»."
   },
   {
     "id": "his_bitwawarszawska1920",
@@ -969,7 +1008,8 @@
       "войны"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "«Чудо на Висле» — год читается как счёт: «девятнадцать-двадцать». Август 1920, сразу после Первой мировой."
   },
   {
     "id": "his_powstaniewarszawskie1944",
@@ -986,7 +1026,8 @@
       "войны"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "1944, 1 августа. Длилось 63 дня — как год Январского восстания (1863). Двойной крючок."
   },
   {
     "id": "his_solidarnosc",
@@ -1004,7 +1045,8 @@
       "факты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Круглый 1980: восьмидесятые в Польше начались с «Солидарности». Гданьск, верфь, Валенса."
   },
   {
     "id": "his_stanwojenny",
@@ -1021,7 +1063,8 @@
       "люди"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "13.12.1981 — «чёртова дюжина декабря»: Ярузельский принёс несчастливое военное положение."
   },
   {
     "id": "his_prezydenci",
@@ -1038,7 +1081,8 @@
       "факты"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Фраза-якорь: «Вожак Квас Качал, Комар Дул Наверх» — Валенса, Квасьневский, Качиньский, Коморовский, Дуда, Навроцкий."
   },
   {
     "id": "his_walesa",
@@ -1087,7 +1131,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Иди по часовой с запада: Германия → Чехия → Словакия → Украина → Беларусь → Литва → Россия (Калининград). Семь стран."
   },
   {
     "id": "geo_morze",
@@ -1136,7 +1181,8 @@
       "история"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Гнезно — «гнездо»: Польша вылупилась из Гнезна. Потом Краков, с 1596 — Варшава."
   },
   {
     "id": "geo_wisla",
@@ -1168,7 +1214,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "По Висле с юга на север: Краков → Варшава → Торунь → Гданьск. «Каждый Вечер Торт Гданьский»."
   },
   {
     "id": "geo_jeziora",
@@ -1184,7 +1231,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "«МаМры на МаЗурах» — озеро и регион на «Ма». Рядом Снярдвы — самое большое."
   },
   {
     "id": "geo_gora",
@@ -1200,7 +1248,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "На вершине Рысов сидит РЫСЬ — самая высокая точка (Татры)."
   },
   {
     "id": "geo_parki",
@@ -1216,7 +1265,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "23 парка. Тройка «Б-Т-Б»: Беловежский, Татранский, Бебжанский."
   },
   {
     "id": "geo_trojmiasto",
@@ -1232,7 +1282,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Труймясто = «три города»: два «Г» и «С» — Гданьск, Гдыня, Сопот."
   },
   {
     "id": "geo_wawel",
@@ -1249,7 +1300,8 @@
       "история"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Вавель — замок короля, Сукеннице — «сукно»: ряды, где торговали тканями."
   },
   {
     "id": "geo_powierzchnia_ludnosc",
@@ -1265,7 +1317,8 @@
       "география"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Обе цифры начинаются с тройки: ~312 тыс. км² и ~38 млн человек."
   },
   {
     "id": "trad_wigilia",
@@ -1421,7 +1474,8 @@
       "гадания"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Анджейки — канун дня св. АНДЖЕЯ (Андрея), ночь 29 → 30 ноября. Гадают на воске."
   },
   {
     "id": "trad_kuchnia_regionalna",
@@ -1439,7 +1493,8 @@
       "регионы"
     ],
     "source": "culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Осцыпек — «овца пёк»: копчёный овечий сыр с гор (Подгалье). Силезия — рулада, Подляшье — картачи («картошка»)."
   },
   {
     "id": "trad_goscinnosc",
@@ -1627,7 +1682,8 @@
       "литература"
     ],
     "source": "culture.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Рифма: «Девяносто шесть — у Шимборской Нобель есть» (1996)."
   },
   {
     "id": "wsp_ue",
@@ -1645,7 +1701,8 @@
       "ЕС"
     ],
     "source": "gov.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Первомай в Евросоюзе: 1 мая 2004 Польша вошла в ЕС."
   },
   {
     "id": "wsp_nato",
@@ -1663,7 +1720,8 @@
       "НАТО"
     ],
     "source": "gov.pl",
-    "personal": false
+    "personal": false,
+    "mnemonic": "НАТО — 1999: заскочили в последний год века, до миллениума."
   },
   {
     "id": "wsp_waluta",
@@ -1714,7 +1772,8 @@
       "политика"
     ],
     "source": "pl.wikipedia.org",
-    "personal": false
+    "personal": false,
+    "mnemonic": "Навроцкий — «на новенького»: новый президент с 2025, после Дуды."
   },
   {
     "id": "wsp_stolica",

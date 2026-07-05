@@ -234,6 +234,16 @@ button {
   border-radius: 12px;
   padding: 10px 12px;
 }
+.a-mnemo {
+  font-size: 14px;
+  background: var(--surface-2);
+  border-left: 3px solid #a78bfa;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.a-mnemo-lbl {
+  font-weight: 600;
+}
 .a-source {
   font-size: 11px;
   color: #6c6c78;
@@ -356,6 +366,21 @@ button {
 }
 
 /* --- Личный блок --- */
+.auth-input {
+  width: 100%;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.auth-input:focus {
+  outline: none;
+  border-color: var(--red);
+}
+
 textarea.personal-input {
   width: 100%;
   min-height: 110px;

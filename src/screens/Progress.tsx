@@ -5,6 +5,7 @@ import { isMastered } from "../lib/scheduler";
 import { downloadBackup, uploadBackup } from "../lib/backup";
 import { BANK } from "../data/bank";
 import { rankOf, CITIES, ACHIEVEMENTS, streakDays } from "../lib/game";
+import AccountPanel from "../components/AccountPanel";
 
 export default function Progress() {
   const progress = useStore((s) => s.progress);
@@ -79,6 +80,8 @@ export default function Progress() {
     <div className="screen">
       <h1 className="h-title">Прогресс</h1>
       <p className="h-sub">Освоено = карточка ушла в долгий интервал (≥ 21 дня).</p>
+
+      <AccountPanel />
 
       <div className="panel">
         <div className="row-between">
