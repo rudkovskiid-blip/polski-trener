@@ -25,6 +25,7 @@ import {
   putCustom,
   deleteCustom,
   putGame,
+  setStamp,
   resetAll as dbResetAll,
 } from "../lib/db";
 import { newProgress, applyGrade } from "../lib/scheduler";
@@ -38,7 +39,13 @@ import {
 import { CATEGORIES } from "../data/categories";
 import { ALL_CARDS } from "../data/bank";
 import { supabase, isCloudEnabled } from "../lib/supabase";
-import { syncAll, pushProgress, pushPersonal, pushExam } from "../lib/sync";
+import {
+  syncAll,
+  pushProgress,
+  pushPersonal,
+  pushExam,
+  pushDoc,
+} from "../lib/sync";
 
 export interface AuthUser {
   id: string;
@@ -122,6 +129,23 @@ export const useStore = create<StoreState>((set, get) => {
     }
     await putGame(g);
     set({ game: g });
+    const user = get().user;
+    if (user) pushDoc(user.id, "game", g, Date.now());
+  };
+
+  // Пометить тетрадку/свои карточки изменёнными и отправить в облако.
+  // Метку сдвигаем всегда (даже без входа) — при следующем логине уедет.
+  const syncNotebook = async () => {
+    const ts = Date.now();
+    await setStamp("notebook", ts);
+    const user = get().user;
+    if (user) pushDoc(user.id, "notebook", Object.values(get().notebook), ts);
+  };
+  const syncCustom = async () => {
+    const ts = Date.now();
+    await setStamp("custom", ts);
+    const user = get().user;
+    if (user) pushDoc(user.id, "custom", get().custom, ts);
   };
 
   return {
@@ -225,10 +249,12 @@ export const useStore = create<StoreState>((set, get) => {
           delete next[cardId];
           return { notebook: next };
         });
+        await syncNotebook();
       } else {
         const mark: NotebookMark = { id: cardId, date: Date.now() };
         await putNotebook(mark);
         set((st) => ({ notebook: { ...st.notebook, [cardId]: mark } }));
+        await syncNotebook();
         await applyGame((g) => ({ ...g, xp: g.xp + XP.notebookMark }));
       }
     },
@@ -245,10 +271,12 @@ export const useStore = create<StoreState>((set, get) => {
       };
       await putCustom(card);
       set((s) => ({ custom: [...s.custom, card] }));
+      await syncCustom();
       // сразу в тетрадку — вопрос ведь уже переписан
       const mark: NotebookMark = { id: card.id, date: Date.now() };
       await putNotebook(mark);
       set((s) => ({ notebook: { ...s.notebook, [card.id]: mark } }));
+      await syncNotebook();
       await applyGame((g) => ({ ...g, xp: g.xp + XP.customCard + XP.notebookMark }));
     },
 
@@ -260,6 +288,8 @@ export const useStore = create<StoreState>((set, get) => {
         delete notebook[id];
         return { custom: s.custom.filter((c) => c.id !== id), notebook };
       });
+      await syncCustom();
+      await syncNotebook();
     },
 
     bossFinished: async (win) => {

@@ -16,7 +16,15 @@ interface TrenerDB extends DBSchema {
   exams: { key: string; value: ExamResult };
   notebook: { key: string; value: NotebookMark };
   custom: { key: string; value: Card };
-  meta: { key: string; value: { key: string; data: GameState } };
+  // meta хранит игровое состояние (key="game") и метки синхронизации (key="stamps").
+  meta: { key: string; value: { key: string; data: unknown } };
+}
+
+// Метки последнего локального изменения коллекций — для облачного слияния
+// last-write-wins (тетрадка/свои карточки).
+export interface SyncStamps {
+  notebook?: number;
+  custom?: number;
 }
 
 const DB_NAME = "polski-trener";
@@ -118,11 +126,46 @@ export async function deleteCustom(id: string): Promise<void> {
 
 export async function getGame(): Promise<GameState> {
   const row = await (await getDB()).get("meta", "game");
-  return row?.data ?? { ...DEFAULT_GAME };
+  return (row?.data as GameState | undefined) ?? { ...DEFAULT_GAME };
 }
 
 export async function putGame(g: GameState): Promise<void> {
   await (await getDB()).put("meta", { key: "game", data: g });
+}
+
+// --- Метки синхронизации (тетрадка / свои карточки) ---
+
+export async function getStamps(): Promise<SyncStamps> {
+  const row = await (await getDB()).get("meta", "stamps");
+  return (row?.data as SyncStamps | undefined) ?? {};
+}
+
+export async function setStamp(
+  key: "notebook" | "custom",
+  ts: number,
+): Promise<void> {
+  const db = await getDB();
+  const cur = ((await db.get("meta", "stamps"))?.data as SyncStamps) ?? {};
+  cur[key] = ts;
+  await db.put("meta", { key: "stamps", data: cur });
+}
+
+// --- Полная замена коллекции (применение блоба из облака) ---
+
+export async function replaceNotebook(list: NotebookMark[]): Promise<void> {
+  const db = await getDB();
+  const tx = db.transaction("notebook", "readwrite");
+  await tx.store.clear();
+  await Promise.all(list.map((m) => tx.store.put(m)));
+  await tx.done;
+}
+
+export async function replaceCustom(list: Card[]): Promise<void> {
+  const db = await getDB();
+  const tx = db.transaction("custom", "readwrite");
+  await tx.store.clear();
+  await Promise.all(list.map((c) => tx.store.put(c)));
+  await tx.done;
 }
 
 // --- Пакетная запись (применение данных из облака при синхронизации) ---

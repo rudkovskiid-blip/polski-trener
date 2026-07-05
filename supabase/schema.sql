@@ -33,10 +33,21 @@ create table if not exists public.exams (
   primary key (user_id, exam_id)
 );
 
+-- docs: «блобы» по ключу (notebook / custom / game) — тетрадка, свои
+-- карточки, игровое состояние. updated_at — метка для слияния.
+create table if not exists public.docs (
+  user_id    uuid   not null references auth.users (id) on delete cascade,
+  key        text   not null,
+  updated_at bigint not null,
+  data       jsonb  not null,
+  primary key (user_id, key)
+);
+
 -- === Row Level Security ===
 alter table public.progress enable row level security;
 alter table public.personal enable row level security;
 alter table public.exams    enable row level security;
+alter table public.docs     enable row level security;
 
 -- Один и тот же принцип для всех таблиц: доступ только к своим строкам.
 -- (drop-if-exists делает скрипт идемпотентным — можно перезапускать.)
@@ -49,6 +60,12 @@ create policy "own progress" on public.progress
 
 drop policy if exists "own personal" on public.personal;
 create policy "own personal" on public.personal
+  for all
+  using (auth.uid() = user_id)
+  with check (auth.uid() = user_id);
+
+drop policy if exists "own docs" on public.docs;
+create policy "own docs" on public.docs
   for all
   using (auth.uid() = user_id)
   with check (auth.uid() = user_id);
