@@ -557,3 +557,128 @@ textarea.nb-input { min-height: 60px; resize: vertical; }
   font-weight: 700;
   margin-top: 10px;
 }
+
+/* --- Всплывашка слова: перевод + «В словарь» --- */
+.word-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+}
+.word-sheet {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(var(--nav-h) + var(--safe-b) + 12px);
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  z-index: 31;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.5);
+  animation: sheet-in 0.16s ease-out;
+}
+@keyframes sheet-in {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+.word-sheet .w-word {
+  font-size: 20px;
+  font-weight: 700;
+}
+.word-sheet .w-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.word-sheet .w-tr {
+  margin-top: 4px;
+  font-size: 16px;
+}
+.word-sheet .w-tr.none {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 14px;
+}
+.word-sheet .w-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+.word-sheet .w-add {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+.word-sheet .w-saved {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* --- Вкладка «Словарь» --- */
+.wd-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.wd-body {
+  flex: 1;
+  min-width: 0;
+}
+.wd-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.wd-word {
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.wd-spk {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.wd-due {
+  font-size: 11px;
+  color: var(--pl);
+  border: 1px solid var(--pl);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.wd-tr {
+  color: var(--text);
+  font-size: 15px;
+  margin-top: 2px;
+}
+.wd-ctx {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 4px;
+}
+.wd-date {
+  color: #6c6c78;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.wd-del {
+  background: none;
+  border: none;
+  font-size: 15px;
+  opacity: 0.55;
+  cursor: pointer;
+  padding: 4px;
+}

@@ -3,6 +3,7 @@ import { useStore } from "./store/useStore";
 import BottomNav, { type Tab } from "./components/BottomNav";
 import Learn from "./screens/Learn";
 import Notebook from "./screens/Notebook";
+import Words from "./screens/Words";
 import Exam from "./screens/Exam";
 import Progress from "./screens/Progress";
 import Guide from "./screens/Guide";
@@ -30,6 +31,8 @@ export default function App() {
         <Learn />
       ) : tab === "notebook" ? (
         <Notebook />
+      ) : tab === "words" ? (
+        <Words />
       ) : tab === "exam" ? (
         <Exam />
       ) : tab === "progress" ? (

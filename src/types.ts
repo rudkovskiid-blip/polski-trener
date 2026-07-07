@@ -90,6 +90,17 @@ export interface NotebookMark {
   date: number; // timestamp (ms)
 }
 
+// Слово из личного словаря: тап по слову в ответе → «В словарь».
+export interface SavedWord {
+  id: string; // нормализованная форма: нижний регистр, без пунктуации по краям
+  word: string; // как слово встретилось в тексте (с оригинальным регистром)
+  translation: string; // перевод RU из словаря банка ("—", если перевода нет)
+  context?: string; // предложение, из которого слово взято
+  addedAt: number; // timestamp (ms)
+  updatedAt: number; // метка последнего изменения — для облачного слияния
+  progress: CardProgress; // FSRS-расписание повторения слова
+}
+
 // Игровое состояние: XP, босс, ачивки, дни занятий.
 export interface GameState {
   xp: number;
@@ -111,4 +122,5 @@ export interface BackupSnapshot {
   notebook?: NotebookMark[];
   custom?: Card[];
   game?: GameState;
+  words?: SavedWord[];
 }

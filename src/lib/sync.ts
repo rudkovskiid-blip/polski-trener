@@ -6,6 +6,7 @@ import type {
   NotebookMark,
   Card,
   GameState,
+  SavedWord,
 } from "../types";
 import {
   getAllProgress,
@@ -13,12 +14,14 @@ import {
   getAllExams,
   getAllNotebook,
   getAllCustom,
+  getAllWords,
   getGame,
   putManyProgress,
   putManyPersonal,
   putManyExams,
   replaceNotebook,
   replaceCustom,
+  replaceWords,
   putGame,
   getStamps,
   setStamp,
@@ -94,10 +97,10 @@ export async function pushExam(userId: string, e: ExamResult): Promise<void> {
   }
 }
 
-// Инкрементальный пуш «документа» (тетрадка/свои карточки/игра).
+// Инкрементальный пуш «документа» (тетрадка/свои карточки/словарь/игра).
 export async function pushDoc(
   userId: string,
-  key: "notebook" | "custom" | "game",
+  key: "notebook" | "custom" | "words" | "game",
   data: unknown,
   updatedAt: number,
 ): Promise<void> {
@@ -243,7 +246,7 @@ export async function syncAll(userId: string): Promise<void> {
     const stamps = await getStamps();
 
     const upsertDoc = async (
-      key: "notebook" | "custom" | "game",
+      key: "notebook" | "custom" | "words" | "game",
       data: unknown,
       updatedAt: number,
     ) => {
@@ -288,6 +291,23 @@ export async function syncAll(userId: string): Promise<void> {
         const ts = Date.now();
         await upsertDoc("custom", localCustom, ts);
         await setStamp("custom", ts);
+      }
+    }
+
+    const localWords = await getAllWords();
+    {
+      const c = cloud.get("words");
+      const localStamp = stamps.words ?? 0;
+      const cloudStamp = c?.updated_at ?? 0;
+      if (cloudStamp > localStamp) {
+        await replaceWords(c!.data as SavedWord[]);
+        await setStamp("words", cloudStamp);
+      } else if (localStamp > cloudStamp) {
+        await upsertDoc("words", localWords, localStamp);
+      } else if (cloudStamp === 0 && localWords.length) {
+        const ts = Date.now();
+        await upsertDoc("words", localWords, ts);
+        await setStamp("words", ts);
       }
     }
 

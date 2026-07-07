@@ -9,6 +9,7 @@ import type {
   CategoryId,
   NotebookMark,
   GameState,
+  SavedWord,
 } from "../types";
 import {
   getAllProgress,
@@ -16,6 +17,7 @@ import {
   getAllExams,
   getAllNotebook,
   getAllCustom,
+  getAllWords,
   getGame,
   putProgress,
   putPersonal,
@@ -24,11 +26,14 @@ import {
   deleteNotebook,
   putCustom,
   deleteCustom,
+  putWord,
+  deleteWord,
   putGame,
   setStamp,
   resetAll as dbResetAll,
 } from "../lib/db";
 import { newProgress, applyGrade } from "../lib/scheduler";
+import { normalizeWord } from "../lib/dict";
 import {
   DEFAULT_GAME,
   XP,
@@ -59,6 +64,7 @@ interface StoreState {
   exams: ExamResult[];
   notebook: Record<string, NotebookMark>;
   custom: Card[];
+  words: Record<string, SavedWord>;
   game: GameState;
   toast: string | null;
   selectedCategories: Set<CategoryId>;
@@ -83,6 +89,13 @@ interface StoreState {
     a_ru: string;
   }) => Promise<void>;
   removeCustomCard: (id: string) => Promise<void>;
+  addWord: (input: {
+    word: string;
+    translation: string;
+    context?: string;
+  }) => Promise<void>;
+  removeWord: (id: string) => Promise<void>;
+  gradeWord: (id: string, grade: Grade) => Promise<void>;
   bossFinished: (win: boolean) => Promise<void>;
   flash: (msg: string) => void;
   toggleCategory: (id: CategoryId) => void;
@@ -147,6 +160,12 @@ export const useStore = create<StoreState>((set, get) => {
     const user = get().user;
     if (user) pushDoc(user.id, "custom", get().custom, ts);
   };
+  const syncWords = async () => {
+    const ts = Date.now();
+    await setStamp("words", ts);
+    const user = get().user;
+    if (user) pushDoc(user.id, "words", Object.values(get().words), ts);
+  };
 
   return {
     loaded: false,
@@ -155,6 +174,7 @@ export const useStore = create<StoreState>((set, get) => {
     exams: [],
     notebook: {},
     custom: [],
+    words: {},
     game: { ...DEFAULT_GAME },
     toast: null,
     selectedCategories: new Set<CategoryId>(ALL_CAT_IDS),
@@ -193,13 +213,14 @@ export const useStore = create<StoreState>((set, get) => {
     },
 
     refresh: async () => {
-      const [progressArr, personalArr, examsArr, notebookArr, customArr, game] =
+      const [progressArr, personalArr, examsArr, notebookArr, customArr, wordsArr, game] =
         await Promise.all([
           getAllProgress(),
           getAllPersonal(),
           getAllExams(),
           getAllNotebook(),
           getAllCustom(),
+          getAllWords(),
           getGame(),
         ]);
       set({
@@ -208,6 +229,7 @@ export const useStore = create<StoreState>((set, get) => {
         exams: examsArr.sort((a, b) => b.finishedAt - a.finishedAt),
         notebook: Object.fromEntries(notebookArr.map((m) => [m.id, m])),
         custom: customArr.sort((a, b) => a.id.localeCompare(b.id)),
+        words: Object.fromEntries(wordsArr.map((w) => [w.id, w])),
         game,
       });
     },
@@ -290,6 +312,56 @@ export const useStore = create<StoreState>((set, get) => {
       });
       await syncCustom();
       await syncNotebook();
+    },
+
+    addWord: async (input) => {
+      const id = normalizeWord(input.word);
+      if (!id) return;
+      if (get().words[id]) {
+        get().flash("Это слово уже в словаре");
+        return;
+      }
+      const now = Date.now();
+      const entry: SavedWord = {
+        id,
+        word: input.word,
+        translation: input.translation || "—",
+        context: input.context,
+        addedAt: now,
+        updatedAt: now,
+        progress: newProgress(`w_${id}`),
+      };
+      await putWord(entry);
+      set((s) => ({ words: { ...s.words, [id]: entry } }));
+      await syncWords();
+      await applyGame((g) => ({ ...g, xp: g.xp + XP.wordAdd }));
+      get().flash(`📔 «${entry.word}» в словаре`);
+    },
+
+    removeWord: async (id) => {
+      await deleteWord(id);
+      set((s) => {
+        const words = { ...s.words };
+        delete words[id];
+        return { words };
+      });
+      await syncWords();
+    },
+
+    gradeWord: async (id, grade) => {
+      const w = get().words[id];
+      if (!w) return;
+      const entry: SavedWord = {
+        ...w,
+        progress: applyGrade(w.progress, grade),
+        updatedAt: Date.now(),
+      };
+      await putWord(entry);
+      set((s) => ({ words: { ...s.words, [id]: entry } }));
+      await syncWords();
+      const gain =
+        grade === "good" ? XP.gradeGood : grade === "hard" ? XP.gradeHard : XP.gradeAgain;
+      await applyGame((g) => ({ ...g, xp: g.xp + gain }), { logDay: true });
     },
 
     bossFinished: async (win) => {

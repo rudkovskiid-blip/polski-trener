@@ -57,6 +57,7 @@ export const XP = {
   gradeAgain: 1,
   notebookMark: 5,
   customCard: 5,
+  wordAdd: 2,
   bossWin: 100,
 } as const;
 

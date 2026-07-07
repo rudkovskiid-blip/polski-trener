@@ -7,6 +7,7 @@ import type {
   BackupSnapshot,
   NotebookMark,
   GameState,
+  SavedWord,
 } from "../types";
 import { DEFAULT_GAME } from "./game";
 
@@ -16,19 +17,21 @@ interface TrenerDB extends DBSchema {
   exams: { key: string; value: ExamResult };
   notebook: { key: string; value: NotebookMark };
   custom: { key: string; value: Card };
+  words: { key: string; value: SavedWord };
   // meta хранит игровое состояние (key="game") и метки синхронизации (key="stamps").
   meta: { key: string; value: { key: string; data: unknown } };
 }
 
 // Метки последнего локального изменения коллекций — для облачного слияния
-// last-write-wins (тетрадка/свои карточки).
+// last-write-wins (тетрадка/свои карточки/словарь).
 export interface SyncStamps {
   notebook?: number;
   custom?: number;
+  words?: number;
 }
 
 const DB_NAME = "polski-trener";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 let dbPromise: Promise<IDBPDatabase<TrenerDB>> | null = null;
 
@@ -50,6 +53,9 @@ function getDB() {
         }
         if (!db.objectStoreNames.contains("custom")) {
           db.createObjectStore("custom", { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains("words")) {
+          db.createObjectStore("words", { keyPath: "id" });
         }
         if (!db.objectStoreNames.contains("meta")) {
           db.createObjectStore("meta", { keyPath: "key" });
@@ -122,6 +128,28 @@ export async function deleteCustom(id: string): Promise<void> {
   await (await getDB()).delete("custom", id);
 }
 
+// --- Личный словарь слов ---
+
+export async function getAllWords(): Promise<SavedWord[]> {
+  return (await getDB()).getAll("words");
+}
+
+export async function putWord(w: SavedWord): Promise<void> {
+  await (await getDB()).put("words", w);
+}
+
+export async function deleteWord(id: string): Promise<void> {
+  await (await getDB()).delete("words", id);
+}
+
+export async function replaceWords(list: SavedWord[]): Promise<void> {
+  const db = await getDB();
+  const tx = db.transaction("words", "readwrite");
+  await tx.store.clear();
+  await Promise.all(list.map((w) => tx.store.put(w)));
+  await tx.done;
+}
+
 // --- Игровое состояние ---
 
 export async function getGame(): Promise<GameState> {
@@ -141,7 +169,7 @@ export async function getStamps(): Promise<SyncStamps> {
 }
 
 export async function setStamp(
-  key: "notebook" | "custom",
+  key: "notebook" | "custom" | "words",
   ts: number,
 ): Promise<void> {
   const db = await getDB();
@@ -197,12 +225,13 @@ export async function putManyExams(list: ExamResult[]): Promise<void> {
 // --- Экспорт / импорт ---
 
 export async function exportSnapshot(version: string): Promise<BackupSnapshot> {
-  const [progress, personal, exams, notebook, custom, game] = await Promise.all([
+  const [progress, personal, exams, notebook, custom, words, game] = await Promise.all([
     getAllProgress(),
     getAllPersonal(),
     getAllExams(),
     getAllNotebook(),
     getAllCustom(),
+    getAllWords(),
     getGame(),
   ]);
   return {
@@ -214,6 +243,7 @@ export async function exportSnapshot(version: string): Promise<BackupSnapshot> {
     exams,
     notebook,
     custom,
+    words,
     game,
   };
 }
@@ -223,7 +253,7 @@ export async function importSnapshot(snap: BackupSnapshot): Promise<void> {
     throw new Error("Файл не похож на бэкап этого приложения.");
   }
   const db = await getDB();
-  const stores = ["progress", "personal", "exams", "notebook", "custom", "meta"] as const;
+  const stores = ["progress", "personal", "exams", "notebook", "custom", "words", "meta"] as const;
   const tx = db.transaction(stores, "readwrite");
   await Promise.all([
     ...(snap.progress ?? []).map((p) => tx.objectStore("progress").put(p)),
@@ -231,6 +261,7 @@ export async function importSnapshot(snap: BackupSnapshot): Promise<void> {
     ...(snap.exams ?? []).map((e) => tx.objectStore("exams").put(e)),
     ...(snap.notebook ?? []).map((m) => tx.objectStore("notebook").put(m)),
     ...(snap.custom ?? []).map((c) => tx.objectStore("custom").put(c)),
+    ...(snap.words ?? []).map((w) => tx.objectStore("words").put(w)),
     ...(snap.game ? [tx.objectStore("meta").put({ key: "game", data: snap.game })] : []),
   ]);
   await tx.done;
@@ -238,7 +269,7 @@ export async function importSnapshot(snap: BackupSnapshot): Promise<void> {
 
 export async function resetAll(): Promise<void> {
   const db = await getDB();
-  const stores = ["progress", "personal", "exams", "notebook", "custom", "meta"] as const;
+  const stores = ["progress", "personal", "exams", "notebook", "custom", "words", "meta"] as const;
   const tx = db.transaction(stores, "readwrite");
   await Promise.all(stores.map((s) => tx.objectStore(s).clear()));
   await tx.done;

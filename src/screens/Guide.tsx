@@ -46,6 +46,17 @@ export default function Guide() {
 
       <div className="panel">
         <div className="lbl" style={{ marginBottom: 8 }}>
+          Словарь слов
+        </div>
+        <p style={{ margin: 0 }} className="muted">
+          Тапни любое слово в польском тексте — услышишь произношение и увидишь
+          перевод. Жми «＋ В словарь», и слово попадёт на вкладку «Словарь», где
+          повторяется по интервалам, как карточки.
+        </p>
+      </div>
+
+      <div className="panel">
+        <div className="lbl" style={{ marginBottom: 8 }}>
           Усилить связкой инструментов
         </div>
         <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.7 }}>
