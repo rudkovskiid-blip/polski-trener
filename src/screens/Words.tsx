@@ -17,8 +17,6 @@ function fmtDate(ts: number) {
 //  - mc_ru_pl: по русскому выбери польское слово (варианты — польские слова);
 //  - mc_pl_ru: по польскому выбери перевод (варианты — русские переводы).
 type WordMode = "recall_pl_ru" | "recall_ru_pl" | "mc_ru_pl" | "mc_pl_ru";
-// Выбор пользователя в селекторе на экране словаря.
-type SelectorMode = "mix" | "pl_ru" | "ru_pl" | "mc";
 
 // Денормализованный элемент очереди: id слова + назначенный режим и
 // (для multiple choice) зафиксированные варианты — чтобы они не пересчитывались
@@ -27,6 +25,8 @@ interface QueueItem {
   id: string;
   mode: WordMode;
   options?: string[];
+  // false — разминочное упражнение: не влияет на FSRS-расписание.
+  graded?: boolean;
 }
 
 // --- Чистые хелперы (вне компонентов) ---
@@ -85,76 +85,65 @@ function buildMcOptions(
   return shuffle([correct, ...dist]);
 }
 
-// Назначение режима слову в «Миксе» по «лестнице» FSRS-состояния:
-//  - без перевода → только PL→RU recall;
-//  - новое/learning → MC (низкий порог входа), чередуя направление; при недоборе
-//    дистракторов — откат на recall_pl_ru;
-//  - зрелое (mastered) → продуктивный recall_ru_pl (самое трудное);
-//  - окрепшее (Review, не mastered) → recall_pl_ru.
+// План упражнений для одного слова по «лестнице» FSRS-состояния. Как в Duolingo:
+// одно слово может встретиться за сессию в нескольких видах упражнений по
+// нарастанию сложности. Только последнее (recall) упражнение влияет на FSRS —
+// разминочный «выбор» идёт без оценки, чтобы не двигать интервал дважды за сессию.
+//  - без перевода → PL→RU recall;
+//  - новое/learning → разминка «выбор» (узнавание, без оценки) + PL→RU recall;
+//  - зрелое (mastered) → продуктивный RU→PL recall (самое трудное);
+//  - окрепшее (Review) → recall, направление чередуется для разнообразия.
 // Зрелые слова НЕ идут в MC — защита от «дешёвого» роста стабильности.
-function assignMixMode(w: SavedWord, allWords: SavedWord[], mcAlt: number): QueueItem {
-  if (!hasRu(w)) return { id: w.id, mode: "recall_pl_ru" };
+function planWord(w: SavedWord, allWords: SavedWord[], alt: number): QueueItem[] {
+  if (!hasRu(w)) return [{ id: w.id, mode: "recall_pl_ru" }];
 
   const p = w.progress;
   const isNewLearning =
     p.reps === 0 || p.state === State.New || p.state === State.Learning;
 
   if (isNewLearning) {
-    const mode: WordMode = mcAlt % 2 === 0 ? "mc_ru_pl" : "mc_pl_ru";
-    const field = mode === "mc_ru_pl" ? "word" : "translation";
+    const steps: QueueItem[] = [];
+    // Разминка: узнавание из вариантов (без оценки), направление чередуется.
+    const mcMode: WordMode = alt % 2 === 0 ? "mc_ru_pl" : "mc_pl_ru";
+    const field = mcMode === "mc_ru_pl" ? "word" : "translation";
     const options = buildMcOptions(w, allWords, field);
-    if (options) return { id: w.id, mode, options };
-    return { id: w.id, mode: "recall_pl_ru" }; // мало дистракторов — откат
+    if (options) steps.push({ id: w.id, mode: mcMode, options, graded: false });
+    // Зачётное упражнение — рецептивный recall.
+    steps.push({ id: w.id, mode: "recall_pl_ru" });
+    return steps;
   }
 
-  if (isMastered(p)) return { id: w.id, mode: "recall_ru_pl" };
-  return { id: w.id, mode: "recall_pl_ru" };
+  if (isMastered(p)) return [{ id: w.id, mode: "recall_ru_pl" }];
+  // Окрепшие: чередуем направление recall, чтобы сессия не была однообразной.
+  const mode: WordMode = alt % 2 === 1 ? "recall_ru_pl" : "recall_pl_ru";
+  return [{ id: w.id, mode }];
 }
 
-// Построить очередь due-слов под выбранный режим селектора.
-function buildQueue(
-  words: Record<string, SavedWord>,
-  selectorMode: SelectorMode,
-): QueueItem[] {
+// Собрать перемешанную очередь: для каждого due-слова — план упражнений, затем
+// интерливинг «как в Duolingo» — на каждом шаге берём следующий шаг случайного
+// ещё не исчерпанного слова. Порядок шагов внутри слова сохраняется (разминочный
+// «выбор» всегда раньше зачётного recall), но типы упражнений и слова
+// перемешиваются, а повторный показ слова разносится по сессии.
+function buildQueue(words: Record<string, SavedWord>): QueueItem[] {
   const all = Object.values(words);
   const due = shuffle(all.filter((w) => isDue(w.progress)));
-  const items: QueueItem[] = [];
-  let mcAlt = 0; // счётчик для чередования направлений MC
+  const perWord = due.map((w, i) => planWord(w, all, i));
 
-  for (const w of due) {
-    if (selectorMode === "pl_ru") {
-      items.push({ id: w.id, mode: "recall_pl_ru" });
-      continue;
+  const cursors = perWord.map(() => 0);
+  const out: QueueItem[] = [];
+  let remaining = perWord.reduce((n, s) => n + s.length, 0);
+  while (remaining > 0) {
+    // Индексы слов, у которых остались невыданные шаги.
+    const eligible: number[] = [];
+    for (let i = 0; i < perWord.length; i++) {
+      if (cursors[i] < perWord[i].length) eligible.push(i);
     }
-    if (selectorMode === "ru_pl") {
-      // Нет перевода — обратный перевод бессмыслен, откатываем на PL→RU.
-      items.push({ id: w.id, mode: hasRu(w) ? "recall_ru_pl" : "recall_pl_ru" });
-      continue;
-    }
-    if (selectorMode === "mc") {
-      // Обе стороны MC требуют перевод (RU-стимул или правильный RU-вариант).
-      if (!hasRu(w)) continue;
-      const first: WordMode = mcAlt % 2 === 0 ? "mc_ru_pl" : "mc_pl_ru";
-      const order: WordMode[] =
-        first === "mc_ru_pl" ? ["mc_ru_pl", "mc_pl_ru"] : ["mc_pl_ru", "mc_ru_pl"];
-      for (const m of order) {
-        const field = m === "mc_ru_pl" ? "word" : "translation";
-        const options = buildMcOptions(w, all, field);
-        if (options) {
-          items.push({ id: w.id, mode: m, options });
-          mcAlt++;
-          break;
-        }
-      }
-      // Недобор дистракторов — слово пропускается в фиксированном режиме «Выбор».
-      continue;
-    }
-    // mix
-    const item = assignMixMode(w, all, mcAlt);
-    if (item.mode === "mc_ru_pl" || item.mode === "mc_pl_ru") mcAlt++;
-    items.push(item);
+    const pick = eligible[Math.floor(Math.random() * eligible.length)];
+    out.push(perWord[pick][cursors[pick]]);
+    cursors[pick]++;
+    remaining--;
   }
-  return items;
+  return out;
 }
 
 // Верен ли выбранный вариант для MC-элемента.
@@ -170,53 +159,29 @@ export default function Words() {
   const removeWord = useStore((s) => s.removeWord);
 
   const [reviewing, setReviewing] = useState(false);
-  // Режим не переживает перезагрузку (по спеке) — храним в локальном состоянии.
-  const [selectorMode, setSelectorMode] = useState<SelectorMode>("mix");
 
   const list = useMemo(
     () => Object.values(words).sort((a, b) => b.addedAt - a.addedAt),
     [words],
   );
   const due = useMemo(() => list.filter((w) => isDue(w.progress)), [list]);
-  const canMC = list.length >= 4; // multiple choice требует пул дистракторов
 
   const onDelete = (w: SavedWord) => {
     if (confirm(`Удалить «${w.word}» из словаря?`)) removeWord(w.id);
   };
 
   if (reviewing) {
-    // Если «Выбор» стал недоступен (мало слов), откатываем на «Микс».
-    const mode = selectorMode === "mc" && !canMC ? "mix" : selectorMode;
-    return <WordSession mode={mode} onExit={() => setReviewing(false)} />;
+    return <WordSession onExit={() => setReviewing(false)} />;
   }
-
-  const segBtn = (id: SelectorMode, label: string, disabled = false) => (
-    <button
-      className={`btn ghost${selectorMode === id ? " primary" : ""}`}
-      disabled={disabled}
-      title={disabled ? "Нужно ≥4 слова в словаре" : undefined}
-      onClick={() => setSelectorMode(id)}
-    >
-      {label}
-    </button>
-  );
 
   return (
     <div className="screen">
       <h1 className="h-title">Словарь</h1>
       <p className="h-sub">
         Тапни слово в любом польском ответе → «В словарь». Здесь эти слова
-        повторяются по интервалам, как карточки.
+        повторяются по интервалам, а типы упражнений (перевод в обе стороны и
+        выбор из вариантов) подмешиваются автоматически.
       </p>
-
-      {list.length > 0 && (
-        <div className="seg">
-          {segBtn("mix", "🎓 Микс")}
-          {segBtn("pl_ru", "PL→RU")}
-          {segBtn("ru_pl", "RU→PL")}
-          {segBtn("mc", "Выбор", !canMC)}
-        </div>
-      )}
 
       <button
         className="btn primary"
@@ -282,11 +247,11 @@ export default function Words() {
 }
 
 // Сессия повторения слов: мультирежим (recall в обе стороны + multiple choice).
-function WordSession({ mode, onExit }: { mode: SelectorMode; onExit: () => void }) {
+function WordSession({ onExit }: { onExit: () => void }) {
   const words = useStore((s) => s.words);
   const gradeWord = useStore((s) => s.gradeWord);
 
-  const [queue, setQueue] = useState<QueueItem[]>(() => buildQueue(words, mode));
+  const [queue, setQueue] = useState<QueueItem[]>(() => buildQueue(words));
   // Фиксируем исходную длину, чтобы прогресс-бар не «прыгал» назад при
   // возврате слов с оценкой «Не вспомнил» в конец очереди.
   const totalRef = useRef<number>(-1);
@@ -342,15 +307,20 @@ function WordSession({ mode, onExit }: { mode: SelectorMode; onExit: () => void 
     setSelected(opt);
   };
 
-  // «Дальше» после ответа в MC: авто-оценка good/again.
+  // «Дальше» после ответа в MC. Разминочный «выбор» (graded === false) не
+  // трогает FSRS и не возвращает слово в очередь — оценивается только зачётный
+  // recall того же слова дальше по сессии.
   const onMcNext = () => {
     if (!cur || !item || selected === null) return;
     const correct = isOptCorrect(item, cur, selected);
-    gradeWord(cur.id, correct ? "good" : "again");
-    setReviewed((r) => r + 1);
+    const graded = item.graded !== false;
+    if (graded) {
+      gradeWord(cur.id, correct ? "good" : "again");
+      setReviewed((r) => r + 1);
+    }
     if (correct) setCorrectCount((c) => c + 1);
     else setWrongCount((c) => c + 1);
-    advance(!correct);
+    advance(graded && !correct);
   };
 
   if (done || !cur || !item) {
@@ -364,7 +334,8 @@ function WordSession({ mode, onExit }: { mode: SelectorMode; onExit: () => void 
           </div>
           {correctCount + wrongCount > 0 && (
             <div className="hint">
-              В «Выборе»: верно <b>{correctCount}</b>, неверно <b>{wrongCount}</b>
+              Разминка (выбор): верно <b>{correctCount}</b>, неверно{" "}
+              <b>{wrongCount}</b>
             </div>
           )}
           <button className="btn ghost" onClick={onExit}>
