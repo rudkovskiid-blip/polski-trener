@@ -682,3 +682,54 @@ textarea.nb-input { min-height: 60px; resize: vertical; }
   cursor: pointer;
   padding: 4px;
 }
+
+/* --- Селектор режима заучивания слов --- */
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.seg .btn {
+  flex: 1 1 auto;
+  padding: 11px 12px;
+  font-size: 15px;
+}
+.seg .btn:disabled {
+  opacity: 0.45;
+}
+
+/* --- Варианты (multiple choice) --- */
+.mc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+.mc-opt {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 16px;
+  text-align: left;
+  color: var(--text);
+  background: var(--surface);
+}
+.mc-opt.correct {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.mc-opt.wrong {
+  background: var(--red-dim);
+  color: #fff;
+  border-color: var(--red-dim);
+}
+.mc-opt:disabled {
+  cursor: default;
+}
+.mc-opt:disabled:not(.correct):not(.wrong) {
+  opacity: 0.55;
+}
