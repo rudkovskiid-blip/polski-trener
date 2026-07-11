@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "../store/useStore";
 import { speakPl, ttsSupported } from "../lib/tts";
-import { isDue, isMastered, State } from "../lib/scheduler";
+import { isDue, State } from "../lib/scheduler";
 import { shuffle } from "../lib/queue";
 import { normalizeWord } from "../lib/dict";
 import type { Grade, SavedWord } from "../types";
@@ -87,14 +87,16 @@ function buildMcOptions(
 
 // План упражнений для одного слова по «лестнице» FSRS-состояния. Как в Duolingo:
 // одно слово может встретиться за сессию в нескольких видах упражнений по
-// нарастанию сложности. Только последнее (recall) упражнение влияет на FSRS —
-// разминочный «выбор» идёт без оценки, чтобы не двигать интервал дважды за сессию.
-//  - без перевода → PL→RU recall;
-//  - новое/learning → разминка «выбор» (узнавание, без оценки) + PL→RU recall;
-//  - зрелое (mastered) → продуктивный RU→PL recall (самое трудное);
-//  - окрепшее (Review) → recall, направление чередуется для разнообразия.
-// Зрелые слова НЕ идут в MC — защита от «дешёвого» роста стабильности.
-function planWord(w: SavedWord, allWords: SavedWord[], alt: number): QueueItem[] {
+// нарастанию сложности. Только зачётный recall влияет на FSRS — разминочный
+// «выбор» идёт без оценки, чтобы не двигать интервал дважды за сессию.
+//  - без перевода → PL→RU recall (единственный доступный вид);
+//  - новое/learning → рецептивная разминка «выбор перевода» (без оценки) +
+//    продуктивный RU→PL recall (вспомни и произнеси польское — самое ценное);
+//  - окрепшее/зрелое → продуктивный RU→PL recall.
+// Пассивную PL→RU-карточку (посмотрел польское → раскрыл перевод) убрали: она
+// дублировала разминку и не имела forcing function. Зрелые слова НЕ идут в MC —
+// защита от «дешёвого» роста стабильности.
+function planWord(w: SavedWord, allWords: SavedWord[]): QueueItem[] {
   if (!hasRu(w)) return [{ id: w.id, mode: "recall_pl_ru" }];
 
   const p = w.progress;
@@ -103,20 +105,17 @@ function planWord(w: SavedWord, allWords: SavedWord[], alt: number): QueueItem[]
 
   if (isNewLearning) {
     const steps: QueueItem[] = [];
-    // Разминка: узнавание из вариантов (без оценки), направление чередуется.
-    const mcMode: WordMode = alt % 2 === 0 ? "mc_ru_pl" : "mc_pl_ru";
-    const field = mcMode === "mc_ru_pl" ? "word" : "translation";
-    const options = buildMcOptions(w, allWords, field);
-    if (options) steps.push({ id: w.id, mode: mcMode, options, graded: false });
-    // Зачётное упражнение — рецептивный recall.
-    steps.push({ id: w.id, mode: "recall_pl_ru" });
+    // Разминка: узнавание перевода по польскому слову (рецептивно, без оценки) —
+    // дополняет зачётный продуктивный recall, не дублируя его направление.
+    const options = buildMcOptions(w, allWords, "translation");
+    if (options) steps.push({ id: w.id, mode: "mc_pl_ru", options, graded: false });
+    // Зачётное упражнение — продуктивный recall RU→PL.
+    steps.push({ id: w.id, mode: "recall_ru_pl" });
     return steps;
   }
 
-  if (isMastered(p)) return [{ id: w.id, mode: "recall_ru_pl" }];
-  // Окрепшие: чередуем направление recall, чтобы сессия не была однообразной.
-  const mode: WordMode = alt % 2 === 1 ? "recall_ru_pl" : "recall_pl_ru";
-  return [{ id: w.id, mode }];
+  // Окрепшие и зрелые: продуктивный recall RU→PL.
+  return [{ id: w.id, mode: "recall_ru_pl" }];
 }
 
 // Собрать перемешанную очередь: для каждого due-слова — план упражнений, затем
@@ -127,7 +126,7 @@ function planWord(w: SavedWord, allWords: SavedWord[], alt: number): QueueItem[]
 function buildQueue(words: Record<string, SavedWord>): QueueItem[] {
   const all = Object.values(words);
   const due = shuffle(all.filter((w) => isDue(w.progress)));
-  const perWord = due.map((w, i) => planWord(w, all, i));
+  const perWord = due.map((w) => planWord(w, all));
 
   const cursors = perWord.map(() => 0);
   const out: QueueItem[] = [];
@@ -301,10 +300,13 @@ function WordSession({ onExit }: { onExit: () => void }) {
     }
   };
 
-  // Выбор варианта в MC (блокируем повторные тапы).
+  // Выбор варианта в MC (блокируем повторные тапы). Как в Duolingo — при любом
+  // тапе озвучиваем правильное польское слово (клик — пользовательский жест,
+  // обходит iOS-политику автовоспроизведения).
   const onSelect = (opt: string) => {
     if (selected !== null) return;
     setSelected(opt);
+    if (cur && ttsSupported()) speakPl(cur.word, { rate: 0.75 });
   };
 
   // «Дальше» после ответа в MC. Разминочный «выбор» (graded === false) не
