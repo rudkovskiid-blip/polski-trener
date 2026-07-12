@@ -14,11 +14,15 @@ export default function StudySession({
   onExit,
   exitLabel = "Выйти",
   doneTitle = "Сессия завершена 🎉",
+  heading,
 }: {
   build: () => Card[];
   onExit: () => void;
   exitLabel?: string;
   doneTitle?: string;
+  // Фиксированный заголовок сессии вместо названия категории карточки.
+  // Нужен для блоков вне банка (напр. «Бытовые фразы» на вкладке «Словарь»).
+  heading?: string;
 }) {
   const grade = useStore((s) => s.grade);
 
@@ -108,6 +112,7 @@ export default function StudySession({
   }
 
   const cat = CATEGORY_BY_ID[current.category];
+  const catLabel = heading ?? (cat ? `${cat.emoji} ${cat.title_ru}` : "");
 
   return (
     <div className="screen">
@@ -116,9 +121,7 @@ export default function StudySession({
       </div>
       <div className="learn-wrap">
         <div className="card">
-          <span className="q-cat">
-            {cat.emoji} {cat.title_ru}
-          </span>
+          <span className="q-cat">{catLabel}</span>
           <div className="q-ru">{current.q_ru}</div>
           {current.q_pl && (
             <div className="q-pl">

@@ -1,16 +1,17 @@
 import type { Bank, Card } from "../types";
 import { CATEGORIES } from "./categories";
 import { PERSONAL_CARDS } from "./personal";
-import { EVERYDAY_CARDS } from "./everyday";
 import cardsJson from "./cards.json";
 
-// Все фактологические карточки (из cards.json) + бытовые фразы + личный блок.
+// Все фактологические карточки (из cards.json) + карточки личного блока.
+// Бытовые фразы (everyday.ts) намеренно НЕ входят в банк: это отдельный блок
+// на вкладке «Словарь», не смешивается с экзаменационными вопросами.
 const factCards = cardsJson as Card[];
 
 export const BANK: Bank = {
   version: "1.0",
   categories: CATEGORIES,
-  cards: [...factCards, ...EVERYDAY_CARDS, ...PERSONAL_CARDS],
+  cards: [...factCards, ...PERSONAL_CARDS],
 };
 
 export const ALL_CARDS = BANK.cards;

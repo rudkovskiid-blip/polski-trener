@@ -25,7 +25,9 @@ export default function Progress() {
 
   const overall = useMemo(() => {
     const total = allCards.length;
-    const seen = Object.keys(progress).length;
+    // Считаем только карточки банка — прогресс блоков вне банка («Бытовые
+    // фразы» на вкладке «Словарь») не должен раздувать статистику экзамена.
+    const seen = allCards.filter((c) => progress[c.id]).length;
     let mastered = 0;
     let attempts = 0;
     let correct = 0;

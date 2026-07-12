@@ -2,9 +2,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "../store/useStore";
 import { speakPl, ttsSupported } from "../lib/tts";
 import { isDue, State } from "../lib/scheduler";
-import { shuffle } from "../lib/queue";
+import { shuffle, buildLearnQueue, dueCount } from "../lib/queue";
 import { normalizeWord } from "../lib/dict";
-import type { Grade, SavedWord } from "../types";
+import { EVERYDAY_CARDS } from "../data/everyday";
+import StudySession from "../components/StudySession";
+import type { CategoryId, Grade, SavedWord } from "../types";
+
+// Категория бытовых фраз живёт только в этом блоке (в банк/фильтр не входит).
+const PHRASE_CATS = new Set<CategoryId>(["bytowe"]);
 
 function fmtDate(ts: number) {
   return new Date(ts).toLocaleDateString("ru-RU");
@@ -156,14 +161,20 @@ function isOptCorrect(item: QueueItem, cur: SavedWord, opt: string): boolean {
 export default function Words() {
   const words = useStore((s) => s.words);
   const removeWord = useStore((s) => s.removeWord);
+  const progress = useStore((s) => s.progress);
 
   const [reviewing, setReviewing] = useState(false);
+  const [phrasesSession, setPhrasesSession] = useState(false);
 
   const list = useMemo(
     () => Object.values(words).sort((a, b) => b.addedAt - a.addedAt),
     [words],
   );
   const due = useMemo(() => list.filter((w) => isDue(w.progress)), [list]);
+  const phraseDue = useMemo(
+    () => dueCount(EVERYDAY_CARDS, progress, PHRASE_CATS),
+    [progress],
+  );
 
   const onDelete = (w: SavedWord) => {
     if (confirm(`Удалить «${w.word}» из словаря?`)) removeWord(w.id);
@@ -171,6 +182,17 @@ export default function Words() {
 
   if (reviewing) {
     return <WordSession onExit={() => setReviewing(false)} />;
+  }
+  if (phrasesSession) {
+    return (
+      <StudySession
+        build={() => buildLearnQueue(EVERYDAY_CARDS, progress, PHRASE_CATS)}
+        onExit={() => setPhrasesSession(false)}
+        exitLabel="К словарю"
+        heading="🛒 Бытовые фразы"
+        doneTitle="Фразы повторены 🎉"
+      />
+    );
   }
 
   return (
@@ -181,6 +203,27 @@ export default function Words() {
         повторяются по интервалам, а типы упражнений (перевод в обе стороны и
         выбор из вариантов) подмешиваются автоматически.
       </p>
+
+      {/* Отдельный блок бытовых фраз — не смешан с экзаменом. */}
+      <div className="card stack" style={{ marginBottom: 14 }}>
+        <div className="row-between">
+          <b>🛒 Бытовые фразы</b>
+          <span className="wd-due">
+            {phraseDue > 0 ? `${phraseDue} к повторению` : "всё повторено ✓"}
+          </span>
+        </div>
+        <p className="hint" style={{ margin: 0 }}>
+          {EVERYDAY_CARDS.length} частых фраз для магазина и улицы: тебя
+          спрашивают — ты отвечаешь по-польски. Заучивай отдельным блоком.
+        </p>
+        <button
+          className="btn primary"
+          disabled={phraseDue === 0}
+          onClick={() => setPhrasesSession(true)}
+        >
+          {phraseDue > 0 ? `🗣️ Учить фразы (${phraseDue})` : "Фразы повторены ✓"}
+        </button>
+      </div>
 
       <button
         className="btn primary"
