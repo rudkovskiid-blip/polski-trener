@@ -7,6 +7,7 @@ export type CategoryId =
   | "tradycje"
   | "ludzie"
   | "wspolczesna"
+  | "bytowe"
   | "osobiste";
 
 export interface Category {

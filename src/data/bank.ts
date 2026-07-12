@@ -1,15 +1,16 @@
 import type { Bank, Card } from "../types";
 import { CATEGORIES } from "./categories";
 import { PERSONAL_CARDS } from "./personal";
+import { EVERYDAY_CARDS } from "./everyday";
 import cardsJson from "./cards.json";
 
-// Все фактологические карточки (из cards.json) + карточки личного блока.
+// Все фактологические карточки (из cards.json) + бытовые фразы + личный блок.
 const factCards = cardsJson as Card[];
 
 export const BANK: Bank = {
   version: "1.0",
   categories: CATEGORIES,
-  cards: [...factCards, ...PERSONAL_CARDS],
+  cards: [...factCards, ...EVERYDAY_CARDS, ...PERSONAL_CARDS],
 };
 
 export const ALL_CARDS = BANK.cards;
